@@ -17,7 +17,7 @@ class CreateInvitesTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id')->unsigned();
             $table->integer('friend_id')->unsigned();
-            $table->string('friend_email');
+            $table->string('friend_phone', 11);
             $table->text('shared_link');
             $table->timestamps();
         });

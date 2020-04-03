@@ -5,9 +5,10 @@
                 Invite someone to shop with you
             </div>
             <div class="card-body">
-                <form action="/invite/send" method="POST" @submit.prevent="addFriend()">
+                <form class="form-inline" action="/invite/send" method="POST" @submit.prevent="addFriend()">
                     <div class="form-group">
-                        <input type="text" name="friendEmail" v-model="friendEmail" placeholder="Friend Email" class="form-control">
+                        <label for="friendPhone" class="friendPhone">Friend Phone: &nbsp;&nbsp;&nbsp;&nbsp; +1</label> 
+                        <input type="text" name="friendPhone" v-model="friendPhone" placeholder="3335557777" class="form-control">
                     </div>
                     <div class="form-group">
                         <input type="submit" value="Invite" class="btn btn-info">
@@ -23,7 +24,7 @@
     export default {
         data() { // fnc returns an object named friendEmail
             return { 
-                friendEmail: '',
+                friendPhone: '',
             }
         },
         mounted() {
@@ -32,9 +33,10 @@
         methods: {
             addFriend() { // post a request to the url we want
                 axios.post('/invite/send', {
-                    friendEmail: this.friendEmail,
+                    friendPhone: this.friendPhone,
                     friend_id: 0,
-                    url: "http://localhost:8000/accept" + window.location.search
+                    // url: "http://localhost:8000/accept" + window.location.search
+                    url: "http://salty-falls-05428.herokuapp.com/accept" + window.location.search
                 })
                 .then(response => {
                     window.location.href = '/discuss' + window.location.search

@@ -14,16 +14,18 @@ class InvitationMail extends Mailable
 
     private $url;
     private $user_name;
+    private $friendemail;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($invitelink, $name)
+    public function __construct($invitelink, $name, $email)
     {
         //
         $this->url = $invitelink;
         $this->user_name = $name;
+        $this->friendemail = $email;
     }
 
     /**
@@ -33,6 +35,6 @@ class InvitationMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.invitation')->with(['url' => $this->url, 'name' => $this->user_name]);
+        return $this->markdown('emails.invitation')->with(['url' => $this->url, 'name' => $this->user_name, 'friendemail' => $this->friendemail]);
     }
 }

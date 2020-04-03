@@ -174,6 +174,7 @@ return [
         App\Providers\BroadcastServiceProvider::class, // provider that sets up all the broadcasting features and registers the authenticated route.
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Nexmo\Laravel\NexmoServiceProvider::class, // nexmo sms provider for nexmo php client library
 
     ],
 
@@ -225,6 +226,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Nexmo' => Nexmo\Laravel\Facade\Nexmo::class, // nexmo sms facade interface.
 
     ],
 

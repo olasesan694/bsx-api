@@ -2270,11 +2270,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     // fnc returns an object named friendEmail
     return {
-      friendEmail: ''
+      friendPhone: ''
     };
   },
   mounted: function mounted() {
@@ -2284,9 +2285,10 @@ __webpack_require__.r(__webpack_exports__);
     addFriend: function addFriend() {
       // post a request to the url we want
       axios.post('/invite/send', {
-        friendEmail: this.friendEmail,
+        friendPhone: this.friendPhone,
         friend_id: 0,
-        url: "http://localhost:8000/accept" + window.location.search
+        // url: "http://localhost:8000/accept" + window.location.search
+        url: "http://salty-falls-05428.herokuapp.com/accept" + window.location.search
       }).then(function (response) {
         window.location.href = '/discuss' + window.location.search;
       })["catch"](function (error) {
@@ -48816,6 +48818,7 @@ var render = function() {
         _c(
           "form",
           {
+            staticClass: "form-inline",
             attrs: { action: "/invite/send", method: "POST" },
             on: {
               submit: function($event) {
@@ -48826,28 +48829,34 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "form-group" }, [
+              _c(
+                "label",
+                { staticClass: "friendPhone", attrs: { for: "friendPhone" } },
+                [_vm._v("Friend Phone:      +1")]
+              ),
+              _vm._v(" "),
               _c("input", {
                 directives: [
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.friendEmail,
-                    expression: "friendEmail"
+                    value: _vm.friendPhone,
+                    expression: "friendPhone"
                   }
                 ],
                 staticClass: "form-control",
                 attrs: {
                   type: "text",
-                  name: "friendEmail",
-                  placeholder: "Friend Email"
+                  name: "friendPhone",
+                  placeholder: "3335557777"
                 },
-                domProps: { value: _vm.friendEmail },
+                domProps: { value: _vm.friendPhone },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.friendEmail = $event.target.value
+                    _vm.friendPhone = $event.target.value
                   }
                 }
               })

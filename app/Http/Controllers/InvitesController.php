@@ -9,6 +9,7 @@ use App\Invite;
 use App\User;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\InvitationMail;
+use App\SendSms; // nexmo sms
 
 class InvitesController extends Controller
 {
@@ -110,14 +111,17 @@ class InvitesController extends Controller
         Invite::create([
             'user_id' => auth()->id(),
             'friend_id' => $request->friend_id,
-            'friend_email' => $request->friendEmail,
+            'friend_phone' => $request->friendPhone,
             'shared_link' => $request->url
         ]);
 
         $user = auth()->user();
 
         // send email - please use the email of this account when you enter the link
-        Mail::to($request->friendEmail)->send(new InvitationMail($request->url, $user->name));
+        // Mail::to($request->friendEmail)->send(new InvitationMail($request->url, $user->name));
+        
+        // send phone sms.
+        SendSms::sendSms($request->friendPhone, $user->name, $request->url);
 
         return (['message' => 'MESSAGE HAS BEEN SENT SISTER']);
     }
