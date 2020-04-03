@@ -2288,7 +2288,7 @@ __webpack_require__.r(__webpack_exports__);
         friendPhone: this.friendPhone,
         friend_id: 0,
         // url: "http://localhost:8000/accept" + window.location.search
-        url: "http://salty-falls-05428.herokuapp.com/accept" + window.location.search
+        url: "https://connect.brisebox.com/accept" + window.location.search
       }).then(function (response) {
         window.location.href = '/discuss' + window.location.search;
       })["catch"](function (error) {

@@ -13,7 +13,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
                     <br>
                     <br>
                     &nbsp;&nbsp;&nbsp; Invite Someone: <a href="{{ url('/invite') }}" class="btn btn-primary">Make an Invitation</a> <br><br> 
