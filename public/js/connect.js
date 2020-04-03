@@ -7,7 +7,7 @@ var price_of_product = document.querySelector("meta[property='bb:price']").getAt
 var product_img_url = document.querySelector("meta[property='og:image']").getAttribute("content");
 
 
-var brisebox_url = 'http://salty-falls-05428.herokuapp.com/connect?'; // https://connect.brisebox.com/ or http://127.0.0.1:8000/
+var brisebox_url = 'https://connect.brisebox.com/connect?'; // https://connect.brisebox.com/ or http://127.0.0.1:8000/
 var incUrl = "incUrl=";
 var incName = "incName=";
 var ampersand = "&";
