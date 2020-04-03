@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'phone', 'password',
     ];
 
     /**
@@ -37,15 +37,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function friendOfMine() { // gets all the friends of the current user
-        return $this->belongsToMany('App\User', 'friends', 'user_id', 'friend_id');
-    }
+    // public function friendOfMine() { // gets all the friends of the current user
+    //     return $this->belongsToMany('App\User', 'friends', 'user_id', 'friend_id');
+    // }
 
-    public function friendOf() { // returns users that have requested the user as their friends 
-        return $this->belongsToMany('App\User', 'friends', 'friend_id', 'user_id');
-    }
+    // public function friendOf() { // returns users that have requested the user as their friends 
+    //     return $this->belongsToMany('App\User', 'friends', 'friend_id', 'user_id');
+    // }
 
-    public function friends() {
-        return $this->friendOfMine->merge($this->friendOf);
-    }
+    // public function friends() {
+    //     return $this->friendOfMine->merge($this->friendOf);
+    // }
 }
