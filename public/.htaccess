@@ -6,12 +6,6 @@
 
     RewriteEngine On
 
-    #RewriteBase /
-    
-    RewriteCond %{SERVER_PORT} 80
-    RewriteRule ^(.*)$ https://connect.brisebox.com/ [R,L]
-
-
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
