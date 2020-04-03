@@ -14,9 +14,13 @@
                         </div>
                     @endif
 
+                    <br>
+                    <br>
                     &nbsp;&nbsp;&nbsp; Invite Someone: <a href="{{ url('/invite') }}" class="btn btn-primary">Make an Invitation</a> <br><br> 
                     &nbsp;&nbsp;&nbsp; Or <br><br>
                     &nbsp;&nbsp;&nbsp; Looking to accept an invitation? <a href="{{ url('/accept') }}" class="btn btn-primary">Accept</a>
+                    <br>
+                    <br>
                 </div>
             </div>
         </div>
