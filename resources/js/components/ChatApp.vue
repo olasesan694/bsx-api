@@ -51,7 +51,7 @@
             hanleIncoming(message) { // will get the message itself
                 if (this.selectedContact && message.from == this.selectedContact.id) { // who is the contact is currently in a conversation with.
                     this.saveNewMessage(message);
-                    return;
+                    return; // return when the condition is met.
                 }
                 alert(message.text);
             }

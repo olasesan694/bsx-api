@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 
 
 use App\User;
-use App\Auth;
+// use App\Auth;
 use App\Message;
 use App\Events\NewMessage;
 use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Controller;
+// use App\Http\Controllers\Controller;
 
 
 class ContactsController extends Controller

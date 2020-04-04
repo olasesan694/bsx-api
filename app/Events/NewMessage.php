@@ -36,6 +36,7 @@ class NewMessage implements ShouldBroadcast
      */
     public function broadcastOn()
     {
+        // only the user that we are sending the message to is only going to listen on this channel.
         return new PrivateChannel('messages.' . $this->message->to);
     }
 
