@@ -121,7 +121,7 @@ class InvitesController extends Controller
         // Mail::to($request->friendEmail)->send(new InvitationMail($request->url, $user->name));
         
         // send phone sms.
-        SendSms::sendSms($request->friendPhone, $user->name, $request->url);
+        // SendSms::sendSms($request->friendPhone, $user->name, $request->url);
 
         return (['message' => 'MESSAGE HAS BEEN SENT SISTER']);
     }

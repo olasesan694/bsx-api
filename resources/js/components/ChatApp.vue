@@ -45,7 +45,7 @@
                         this.selectedContact = contact;
                     })
             },
-            saveNewMessage(message) { // takes in message not text and saves the message
+            saveNewMessage(message) { // takes in message not text and saves the message in the messages push function
                 this.messages.push(message);
             },
             hanleIncoming(message) { // will get the message itself
@@ -54,7 +54,7 @@
                     return;
                 }
                 alert(message.text);
-            },
+            }
         },
         components: {Conversation, ContactsList}
     }

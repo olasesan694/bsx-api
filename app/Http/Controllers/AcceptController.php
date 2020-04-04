@@ -19,9 +19,14 @@ class AcceptController extends Controller
     public function send () {
         $user = auth()->user();
         // updates Friendid
-        DB::update('UPDATE invites SET friend_id = ? WHERE friend_phone = ?', [auth()->id(), $user->phone]); 
+        // DB::update('UPDATE invites SET friend_id = ? WHERE friend_phone = ?', [auth()->id(), $user->phone]);
+        $affected = DB::update('UPDATE invites SET friend_id=:sFriend WHERE friend_phone=:sPhone', [
+            'sFriend' => auth()->id(), 
+            'sPhone' => $user->phone
+        ]); 
         // DB::update('UPDATE invites SET friend_id = ? WHERE friend_email = ?', [auth()->id(), $user->email]);
         
-        return (['message' => 'MESSAGE HAS BEEN SENT MRS.']);
+        return "AFFECTED" . $affected . "row(s)."; 
+        // return (['message' => 'MESSAGE HAS BEEN SENT MRS.']);
     }
 }

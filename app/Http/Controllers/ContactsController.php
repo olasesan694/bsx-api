@@ -64,13 +64,28 @@ class ContactsController extends Controller
         return response()->json($contacts);
     }
 
+
+
     public function getMessagesFor($id)
     {
-        // mark all messages with the selected contact as read
-        $messages = Message::where('from', $id)->where('to', auth()->id())->get(); // gets all the messages user sent and messages friend sends
+        // Later: mark all messages with the selected contact as read
 
+        // $messages = Message::where('from', $id)->where('to', auth()->id())->get(); // gets all the messages user sent and messages friend sends
+
+        // $messages = Message::where('from', $id)->orWhere('to', $id)->get();
+
+        $messages = Message::where(function($q) use ($id) {
+            $q->where('from', auth()->id());
+            $q->where('to', $id);
+        })->orWhere(function($q) use ($id) {
+            $q->where('from', $id);
+            $q->where('to', auth()->id());
+        })
+        ->get(); // (a = 1 AND b=2) OR (c=1 OR d=2) Two functions and if statements between them.
+        
         return response()->json($messages);
     }
+
 
 
     public function send(Request $request) 

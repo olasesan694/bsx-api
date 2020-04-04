@@ -1958,7 +1958,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     saveNewMessage: function saveNewMessage(message) {
-      // takes in message not text and saves the message
+      // takes in message not text and saves the message in the messages push function
       this.messages.push(message);
     },
     hanleIncoming: function hanleIncoming(message) {
