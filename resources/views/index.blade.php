@@ -82,6 +82,7 @@
             <div class="content">
                 <h2>Live online shopping with a friend </h2>
                 <h3> Using Brisebox </h3>
+                
             </div>
         </div>
     </body>
