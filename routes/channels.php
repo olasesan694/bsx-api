@@ -14,5 +14,6 @@
 // define a gateway | Same name (messages.) used in NewMessage Event | Passing the user id
 Broadcast::channel('messages.{id}', function ($user, $id) { // $user is the logged in user, and $id is the id we get from the front end.
     // dd($user->id, $id); 
-    return $user->id === (int) $id; // only if it is the user's channel can they receive incoming events | If they change the channel name they won't be able to listen
+    return true;
+    // return $user->id === (int) $id; // only if it is the user's channel can they receive incoming events | If they change the channel name they won't be able to listen
 });
