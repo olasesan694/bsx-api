@@ -42,10 +42,10 @@ class NewMessage implements ShouldBroadcast
 
     // validate each user that wants to join this PRIVATE channel will need to 
     // send their user id and we will validate if they are authorized to use this channel
-    // public function broadcastWith()
-    // {
-    //     return ["message" => $this->message]; // Adds a key of message | Added to our event and sent as data to our component.
-    // }
+    public function broadcastWith()
+    {
+        return ["message" => $this->message]; // Adds a key of message | Added to our event and sent as data to our component.
+    }
 
     // public function broadcastAs()
     // {
