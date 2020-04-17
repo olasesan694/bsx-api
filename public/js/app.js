@@ -2003,6 +2003,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     contacts: {
@@ -2012,14 +2015,25 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      // selected: this.contacts.length ? this.contacts[0] : null
-      selected: 0
+      selected: this.contacts.length ? this.contacts[0] : null
     };
   },
   methods: {
-    selectContact: function selectContact(index, contact) {
-      this.selected = index;
-      this.$emit('selected', contact); // emit an event called selected with value contact
+    selectContact: function selectContact(contact) {
+      this.selected = contact;
+      this.$emit('selected', contact);
+    }
+  },
+  computed: {
+    sortedContacts: function sortedContacts() {
+      var _this = this;
+
+      return _.sortBy(this.contacts, [function (contact) {
+        if (contact == _this.selected) {
+          return Infinity;
+        } // return contact.unread;
+
+      }]).reverse();
     }
   }
 });
@@ -48138,15 +48152,15 @@ var render = function() {
   return _c("div", { staticClass: "contacts-list" }, [
     _c(
       "ul",
-      _vm._l(_vm.contacts, function(contact) {
+      _vm._l(_vm.sortedContacts, function(contact) {
         return _c(
           "li",
           {
             key: contact.id,
-            class: { selected: _vm.index == _vm.selected },
+            class: { selected: contact == _vm.selected },
             on: {
               click: function($event) {
-                return _vm.selectContact(_vm.index, contact)
+                return _vm.selectContact(contact)
               }
             }
           },
