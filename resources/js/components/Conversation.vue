@@ -1,37 +1,43 @@
 <template>
-    <div class="contacts-list">
-        <ul>
-            <!-- selects contacts and process selected  -->
-            <li v-for="(contact, index) in contacts" :key="contact.id" @click="selectContact(index, contact)" :class="{ 'selected': index == selected }">
-                <div class="contact">
-                    <p class="name">{{ contact.name }}</p>
-                    <p class="email">{{ contact.email }}</p>
-                </div>
-            </li>
-        </ul>
+    <div class="conversation">
+        <!-- show contact's name if we have contacts -->
+        <h1>{{ contact ? contact.name : 'Refresh page once friend joins. Or select a contact on the right.' }}</h1>
+        <MessagesFeed :contact="contact" :messages="messages"/>
+        <!-- event for when user clicks enter and sends a message  -->
+        <MessageComposer @send="sendMessage"/>
     </div>
 </template>
 
 <script>
+    import MessagesFeed from './MessagesFeed';
+    import MessageComposer from './MessageComposer';
+
     export default {
         props: {
-            contacts: {
+            contact: {
+                type: Object,
+                default: null
+            },
+            messages: {
                 type: Array,
                 default: []
             }
         },
-        data() {
-            return {
-                // selected: this.contacts.length ? this.contacts[0] : null
-                selected: 0
-            };
-        },
         methods: {
-            selectContact(index, contact) {
-                this.selected = index;
-                this.$emit('selected', contact); // emit an event called selected with value contact
+            sendMessage(text) {
+                if (!this.contact) { // do nothin if no contact
+                    return;
+                }
+                axios.post('/conversation/send', { // else post the request to the backend using axios
+                    // save the message
+                    contact_id: this.contact.id, // data we need is a contact
+                    text: text // also need the text
+                }).then((response) => { // fire new event once we get a response back (returned in send func in the ContactsController)
+                    this.$emit('new', response.data); // send out an event called new to send out the data.
+                })
             }
-        }
+        },
+        components: {MessagesFeed, MessageComposer}
     }
 </script>
 
