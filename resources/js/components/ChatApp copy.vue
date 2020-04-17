@@ -1,14 +1,16 @@
 <template>
     <div class="chat-app">
+        <!-- save new message when we get one  -->
         <Conversation :contact="selectedContact" :messages="messages" @new="saveNewMessage"/>
-        <ContactsList :contacts="contacts" @selected="startConversationWith"/>
+        <!-- holds the startConversationWith function declared at the bottom -->
+        <ContactsList :contacts="contacts" @selected="startConversationWith"/> <!-- listens to the 'selected' emit event created in contactlist.vue -->
     </div>
 </template>
 
 <script>
     import Conversation from './Conversation';
     import ContactsList from './ContactsList';
-
+    
     export default {
         props: {
             user: {
@@ -25,58 +27,41 @@
         },
         mounted() {
             Echo.private(`messages.${this.user.id}`)
-                .listen('NewMessage', (e) => {
+                .listen('NewMessage', (e) => { // listens on event called NewMessage
                     this.hanleIncoming(e.message);
-                });
+                }); // listens to event; the private channel
 
             axios.get('/contacts')
                 .then((response) => {
                     this.contacts = response.data;
                 });
+
         },
         methods: {
-            startConversationWith(contact) {
-                this.updateUnreadCount(contact, true);
-
+            startConversationWith(contact) { // perform a request to the api to get all the messages with this contact
                 axios.get(`/conversation/${contact.id}`)
                     .then((response) => {
                         this.messages = response.data;
                         this.selectedContact = contact;
                     })
             },
-            saveNewMessage(message) {
+            saveNewMessage(message) { // takes in message not text and saves the message in the messages push function
                 this.messages.push(message);
             },
-            hanleIncoming(message) {
-                if (this.selectedContact && message.from == this.selectedContact.id) {
+            hanleIncoming(message) { // will get the message itself
+                if (this.selectedContact && message.from == this.selectedContact.id) { // who is the contact is currently in a conversation with.
                     this.saveNewMessage(message);
-                    return;
+                    return; // return when the condition is met.
                 }
-
-                this.updateUnreadCount(message.from_contact, false);
-            },
-            updateUnreadCount(contact, reset) {
-                this.contacts = this.contacts.map((single) => {
-                    if (single.id !== contact.id) {
-                        return single;
-                    }
-
-                    if (reset)
-                        single.unread = 0;
-                    else
-                        single.unread += 1;
-
-                    return single;
-                })
+                alert(message.text);
             }
         },
         components: {Conversation, ContactsList}
     }
 </script>
 
-
 <style lang="scss" scoped>
-.chat-app {
-    display: flex;
-}
+    .chat-app {
+        display: flex;
+    }
 </style>
