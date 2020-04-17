@@ -22,44 +22,45 @@ class ContactsController extends Controller
     public function get()
     {
 
-        $users = DB::select('SELECT user_id FROM invites WHERE user_id = :id LIMIT 1', ['id' => auth()->id()]);
-        foreach ($users as $user) {
-            $userid = $user->user_id;
-            $this->uid = $userid;
-        }
+        // $users = DB::select('SELECT user_id FROM invites WHERE user_id = :id LIMIT 1', ['id' => auth()->id()]);
+        // foreach ($users as $user) {
+        //     $userid = $user->user_id;
+        //     $this->uid = $userid;
+        // }
         
 
 
-        $friends = DB::select('SELECT friend_id FROM invites WHERE friend_id = :id LIMIT 1', ['id' => auth()->id()]);
-        foreach ($friends as $friend) {
-            $friendid = $friend->friend_id;
-            $this->fid = $friendid;
-        }
+        // $friends = DB::select('SELECT friend_id FROM invites WHERE friend_id = :id LIMIT 1', ['id' => auth()->id()]);
+        // foreach ($friends as $friend) {
+        //     $friendid = $friend->friend_id;
+        //     $this->fid = $friendid;
+        // }
         
 
 
-        if (auth()->id() == $this->uid) {
+        // if (auth()->id() == $this->uid) {
 
-            $these = DB::select('SELECT friend_id FROM invites WHERE user_id = :id', ['id' => auth()->id()]);
+        //     $these = DB::select('SELECT friend_id FROM invites WHERE user_id = :id', ['id' => auth()->id()]);
 
-            foreach ($these as $the) {
-                $val = $the->friend_id;
-                $contacts = DB::select('SELECT * FROM users WHERE id = :id', ['id' => $val]);
-            }
+        //     foreach ($these as $the) {
+        //         $val = $the->friend_id;
+        //         $contacts = DB::select('SELECT * FROM users WHERE id = :id', ['id' => $val]);
+        //     }
            
-        } else if (auth()->id() == $this->fid) {
+        // } else if (auth()->id() == $this->fid) {
 
-            $estas = DB::select('SELECT user_id FROM invites WHERE friend_id = :id', ['id' => auth()->id()]);
+        //     $estas = DB::select('SELECT user_id FROM invites WHERE friend_id = :id', ['id' => auth()->id()]);
 
-            foreach ($estas as $esta) {
-                $value = $esta->user_id;
-                $contacts = DB::select('SELECT * FROM users WHERE id = :id', ['id' => $value]);
-            }
+        //     foreach ($estas as $esta) {
+        //         $value = $esta->user_id;
+        //         $contacts = DB::select('SELECT * FROM users WHERE id = :id', ['id' => $value]);
+        //     }
 
-        } else {
-            $contacts = [];
-        }
+        // } else {
+        //     $contacts = [];
+        // }
 
+        $contacts = User::where('id', '!=', auth()->id())->get();
 
         return response()->json($contacts);
     }
@@ -73,6 +74,8 @@ class ContactsController extends Controller
         // $messages = Message::where('from', $id)->where('to', auth()->id())->get(); // gets all the messages user sent and messages friend sends
 
         // $messages = Message::where('from', $id)->orWhere('to', $id)->get();
+
+        // Message::where('from', $id)->where('to', auth()->id())->update(['read' => true]);
 
         $messages = Message::where(function($q) use ($id) {
             $q->where('from', auth()->id());
