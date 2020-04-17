@@ -2,7 +2,7 @@
     <div class="contacts-list">
         <ul>
             <!-- selects contacts and process selected  -->
-            <li v-for="(contact, index) in contacts" :key="contact.id" @click="selectContact(index, contact)" :class="{ 'selected': index == selected }">
+            <li v-for="contact in contacts" :key="contact.id" @click="selectContact(index, contact)" :class="{ 'selected': index == selected }">
                 <div class="contact">
                     <p class="name">{{ contact.name }}</p>
                     <p class="email">{{ contact.email }}</p>
