@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <script src="{{ asset('js/extractor.js') }}"></script>
+    {{-- <script src="{{ asset('js/extractor.js') }}"></script> --}}
 
     <div class="container">
         <div class="content">
 
-            <div class="company-brand">
+            {{-- <div class="company-brand">
             <p id="uppercase-brand"></p>
             <script>
                 const companyBrand = extractCompanyName().toUpperCase();
@@ -28,7 +28,7 @@
             <script>extractProductTitle();</script>
 
             <p id="price"></p>
-            <script>extractProductPrice();</script>
+            <script>extractProductPrice();</script> --}}
 
             <invite-form></invite-form>
 
