@@ -44,14 +44,9 @@ $factory->define(App\Message::class, function (Faker $faker) {
 
 // fake factory for invites
 $factory->define(App\Invite::class, function (Faker $faker) {
-    // do {
-    //     $user_id = rand(1, 15);
-    //     $friend_id = rand(1, 15);
-    // } while ($user_id === $friend_id);
-
     return [
-        'user_id' => $faker->randomNumber(2),
-        'friend_id' => $faker->randomNumber(2),
+        'user_id' => 1,
+        'friend_id' => 2,
         'friend_phone' => $faker->phoneNumber
     ];
 });
