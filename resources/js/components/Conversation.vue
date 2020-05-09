@@ -1,6 +1,6 @@
 <template>
     <div class="conversation">
-        <h1>{{ contact ? contact.name : 'Select a Contact' }}</h1>
+        <h1>{{ contact ? contact.name : 'Refresh page once friend joins. Or select a contact on the right.' }}</h1>
         <MessagesFeed :contact="contact" :messages="messages"/>
         <MessageComposer @send="sendMessage"/>
     </div>
@@ -51,6 +51,7 @@
         padding: 10px;
         margin: 0;
         border-bottom: 1px dashed lightgray;
+            color: rgb(127, 221, 72); 
     }
 }
 </style>
