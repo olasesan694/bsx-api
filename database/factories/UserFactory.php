@@ -52,6 +52,6 @@ $factory->define(App\Invite::class, function (Faker $faker) {
     return [
         'user_id' => $user_id,
         'friend_id' => $friend_id,
-        'friend_phone' => $faker->phoneNumber
+        'friend_phone' => 123-456-7000
     ];
 });
