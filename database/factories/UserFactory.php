@@ -50,8 +50,8 @@ $factory->define(App\Invite::class, function (Faker $faker) {
     // } while ($user_id === $friend_id);
 
     return [
-        'user_id' => $faker->randomNumber(10),
-        'friend_id' => $faker->randomNumber(10),
+        'user_id' => $faker->randomNumber(2),
+        'friend_id' => $faker->randomNumber(2),
         'friend_phone' => $faker->phoneNumber
     ];
 });
