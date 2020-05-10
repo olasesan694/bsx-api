@@ -55,13 +55,13 @@ $factory->define(App\Invite::class, function (Faker $faker) {
     //     'friend_phone' => $faker->phoneNumber
     // ];
     do {
-        $user = rand(1, 15);
-        $friend = rand(1, 15);
-    } while ($user_id === $friend);
+        $userid = rand(1, 15);
+        $friendid = rand(1, 15);
+    } while ($userid === $friendid);
 
     return [
-        'user_id' => $user,
-        'friend_id' => $friend,
+        'user_id' => $userid,
+        'friend_id' => $friendid,
         'friend_phone' => $faker->phoneNumber
     ];
 });
