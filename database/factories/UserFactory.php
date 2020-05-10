@@ -62,6 +62,7 @@ $factory->define(App\Invite::class, function (Faker $faker) {
     return [
         'user_id' => $userid,
         'friend_id' => $friendid,
-        'friend_phone' => $faker->phoneNumber
+        'friend_phone' => $faker->phoneNumber,
+        'shared_link' => 'http://via.placeholder.com/150x150'
     ];
 });
