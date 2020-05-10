@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Message;
 use App\Events\NewMessage;
-// use Illuminate\Support\Facades\DB;
-use DB;
+use Illuminate\Support\Facades\DB;
+// use DB;
 
 class ContactsController extends Controller
 {
@@ -22,7 +22,7 @@ class ContactsController extends Controller
         // get all users except the authenticated one
         $contacts = User::where('id', '!=', auth()->id())->get();
 
-        
+
         // // gets user id (inviter) from the invites table
         // $users = DB::select('SELECT user_id FROM invites WHERE user_id = :id LIMIT 1', ['id' => auth()->id()]);
         // foreach ($users as $user) {
