@@ -19,6 +19,10 @@ class ContactsController extends Controller
     public function get()
     {
 
+        // get all users except the authenticated one
+        $contacts = User::where('id', '!=', auth()->id())->get();
+
+        
         // // gets user id (inviter) from the invites table
         // $users = DB::select('SELECT user_id FROM invites WHERE user_id = :id LIMIT 1', ['id' => auth()->id()]);
         // foreach ($users as $user) {
