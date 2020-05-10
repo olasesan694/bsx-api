@@ -3,7 +3,7 @@
 use App\Invite;
 use Illuminate\Database\Seeder;
 
-class UsersTableSeeder extends Seeder
+class InvitesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
