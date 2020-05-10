@@ -36,7 +36,8 @@
                     friendPhone: this.friendPhone,
                     friend_id: 0,
                     // url: "http://localhost:8000/accept" + window.location.search
-                    url: "https://connect.brisebox.com/accept" + window.location.search
+                    url: "http://fierce-dawn-63354.herokuapp.com/accept" + window.location.search
+                    // url: "https://connect.brisebox.com/accept" + window.location.search
                 })
                 .then(response => {
                     window.location.href = '/discuss' + window.location.search
