@@ -20,8 +20,7 @@ $factory->define(User::class, function (Faker $faker) {
     // 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
     return [
         'name' => $faker->name,
-        // 'phone' => $faker->phoneNumber,
-        'phone' => rand(1, 5),
+        'phone' => $faker->phoneNumber,
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
@@ -55,6 +54,7 @@ $factory->define(App\Invite::class, function (Faker $faker) {
     //     'friend_id' => $faker->numberBetween($min = 1, $max = 30),
     //     'friend_phone' => $faker->phoneNumber
     // ];
+    
     do {
         $userid = rand(1, 15);
         $friendid = rand(1, 15);
@@ -63,7 +63,7 @@ $factory->define(App\Invite::class, function (Faker $faker) {
     return [
         'user_id' => $userid,
         'friend_id' => $friendid,
-        'friend_phone' => rand(1, 5),
+        'friend_phone' => $faker->phoneNumber,
         'shared_link' => 'http://via.placeholder.com/150x150'
     ];
 });
