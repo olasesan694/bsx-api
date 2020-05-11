@@ -14,8 +14,8 @@ use DB;
 class ContactsController extends Controller
 {
     
-    // private $uid;
-    // private $fid;
+    private $uid;
+    private $fid;
     
     public function get()
     {
