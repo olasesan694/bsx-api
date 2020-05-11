@@ -65,11 +65,21 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .footer {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                background-color: #ffffff;
+                color: #000000;
+                text-align: center;
+            }
         </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
+            {{-- @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
@@ -81,14 +91,25 @@
                         @endif
                     @endauth
                 </div>
-            @endif
+            @endif --}}
 
             <div class="content">
-                <h2>Live online shopping with a spouse </h2>
+                <h2>Live online shopping with a friend </h2>
                 <h3> Find the Brisebox button when shopping online. </h3>
-                
+                <a href="https://brisebox.com">Learn more ...</a>
             </div>
         </div>
+
+        <section id="bottom-half">
+            <div class="container">
+                <div class="content">
+    
+                </div>
+            </div>
+            <div class="footer">
+                <p>&COPY; Brisebox 2020</p>
+            </div>
+        </section>
     </body>
 </html>
 

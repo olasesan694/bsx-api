@@ -11,7 +11,7 @@
                         <input type="text" name="friendPhone" v-model="friendPhone" placeholder="3335557777" class="form-control">
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="Invite" class="btn btn-info">
+                        <input type="submit" value="Invite" class="btn-invite">
                     </div>
                 </form>
             </div>
@@ -35,9 +35,7 @@
                 axios.post('/invite/send', {
                     friendPhone: this.friendPhone,
                     friend_id: 0,
-                    // url: "http://localhost:8000/accept" + window.location.search
-                    url: "http://fierce-dawn-63354.herokuapp.com/accept" + window.location.search
-                    // url: "https://connect.brisebox.com/accept" + window.location.search
+                    url: "https://connect.brisebox.com/accept" + window.location.search
                 })
                 .then(response => {
                     window.location.href = '/discuss' + window.location.search
@@ -60,5 +58,14 @@
     }
     .card-body form {
         padding: 7%;
+    }
+    .btn-invite {
+        background-color: #000000;
+        color: #fff;
+        border: 1px solid #000000;
+        border-radius: 3px;
+        padding: 5px;
+        padding-left: 40px;
+        padding-right: 40px;
     }
 </style>

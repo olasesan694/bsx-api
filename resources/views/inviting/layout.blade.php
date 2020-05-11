@@ -7,11 +7,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    
     <meta name="userId" content="{{ Auth::check() ? Auth::user()->id : 'null' }}">
 
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Invite someone using {{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -29,46 +27,18 @@
             color: #000000;
             font-family: 'Nunito', sans-serif;
             font-weight: 200;
-            height: 20vh;
+            height: 35vh;
             margin: 0;
-        }
-
-        .card-header {
-            background-color: #555555;
-            color: white;
-        }
-
-        .btn-register {
-            background-color: #000000;
-            color: #fff;
-            border: 1px solid #000000;
-            border-radius: 3px;
-            padding: 10px;
-            padding-left: 40px;
-            padding-right: 40px;
         }
 
         #bottom-half  {
-            /* background-color: rgb(0, 39, 97); */
-            /* background-color: rgb(233, 253, 144); */
-            background-color: rgb(248, 61, 117);
-            background-image: linear-gradient(to right, rgb(255, 86, 136) , rgb(255, 121, 87));
+            background-color: rgb(33, 168, 62);
             color: #ffffff;
             font-family: 'Nunito', sans-serif;
             font-weight: 200;
-            height: 50vh;
+            height: 100vh;
             margin: 0;
             padding: 10px; 
-        }
-
-        .footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            background-color: #ffffff;
-            color: #000000;
-            text-align: center;
         }
     </style>
 </head>

@@ -2281,9 +2281,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.post('/invite/send', {
         friendPhone: this.friendPhone,
         friend_id: 0,
-        // url: "http://localhost:8000/accept" + window.location.search
-        url: "http://fierce-dawn-63354.herokuapp.com/accept" + window.location.search // url: "https://connect.brisebox.com/accept" + window.location.search
-
+        url: "https://connect.brisebox.com/accept" + window.location.search
       }).then(function (response) {
         window.location.href = '/discuss' + window.location.search;
       })["catch"](function (error) {
@@ -8918,7 +8916,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".invite[data-v-735aeb2a] {\n  margin: 0;\n  padding: 0;\n}\n.card-header[data-v-735aeb2a] {\n  padding: 7%;\n}\n.card-body form[data-v-735aeb2a] {\n  padding: 7%;\n}", ""]);
+exports.push([module.i, ".invite[data-v-735aeb2a] {\n  margin: 0;\n  padding: 0;\n}\n.card-header[data-v-735aeb2a] {\n  padding: 7%;\n}\n.card-body form[data-v-735aeb2a] {\n  padding: 7%;\n}\n.btn-accept[data-v-735aeb2a] {\n  background: #000000;\n  color: white;\n  border: 1px solid #000000;\n  padding: 7px;\n  border-radius: 3px;\n}", ""]);
 
 // exports
 
@@ -8937,7 +8935,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".invite[data-v-bd308e86] {\n  margin: 0;\n  padding: 0;\n}\n.card-header[data-v-bd308e86] {\n  padding: 7%;\n}\n.card-body form[data-v-bd308e86] {\n  padding: 7%;\n}", ""]);
+exports.push([module.i, ".invite[data-v-bd308e86] {\n  margin: 0;\n  padding: 0;\n}\n.card-header[data-v-bd308e86] {\n  padding: 7%;\n}\n.card-body form[data-v-bd308e86] {\n  padding: 7%;\n}\n.btn-invite[data-v-bd308e86] {\n  background-color: #000000;\n  color: #fff;\n  border: 1px solid #000000;\n  border-radius: 3px;\n  padding: 5px;\n  padding-left: 40px;\n  padding-right: 40px;\n}", ""]);
 
 // exports
 
@@ -48416,7 +48414,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "form-group" }, [
       _c("input", {
-        staticClass: "btn btn-info",
+        staticClass: "btn-accept",
         attrs: { type: "submit", value: "Accept Invitation" }
       })
     ])
@@ -48511,7 +48509,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "form-group" }, [
       _c("input", {
-        staticClass: "btn btn-info",
+        staticClass: "btn-invite",
         attrs: { type: "submit", value: "Invite" }
       })
     ])
