@@ -63,18 +63,21 @@
                 }
 
                 &.received {
-                    text-align: right;
+                    text-align: left;
 
                     .text {
-                        background: #b2b2b2;
+                        background-color: rgb(248, 61, 117);
+                        background-image: linear-gradient(to right, rgb(255, 86, 136) , rgb(255, 121, 87));
+                        color: #fff;
                     }
                 }
 
                 &.sent {
-                    text-align: left;
+                    text-align: right;
 
                     .text {
-                        background: #81c4f9;
+                        background: #b2b2b2;
+                        color: #000;
                     }
                 }
             }

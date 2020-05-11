@@ -19,21 +19,6 @@ class ContactsController extends Controller
     
     public function get()
     {
-
-        // // // get all users except the authenticated one
-        // // $contacts = User::where('id', '!=', auth()->id())->get();
-        // $friendIds = DB::select('SELECT friend_id FROM invites WHERE user_id = :id', ['id' => auth()->id()]);
-        // // $friendIds = Invite::select(\DB::raw("friend_id"))
-        // //     ->where('user_id', auth()->id())
-        // //     ->limit(1)
-        // //     ->get();
-        // foreach ($friendIds as $friendId) {
-        //     $value = $friendId->friend_id;
-        //     // $contacts = DB::select('SELECT * FROM users WHERE id = :id', ['id' => $value]);
-        //     $contacts = User::where('id', $value)->get();
-        // }
-
-
         // gets user id (inviter) from the invites table
         $users = DB::select('SELECT user_id FROM invites WHERE user_id = :id LIMIT 1', ['id' => auth()->id()]);
         foreach ($users as $user) {
@@ -57,7 +42,6 @@ class ContactsController extends Controller
 
             foreach ($these as $the) {
                 $val = $the->friend_id;
-                // $contacts = DB::select('SELECT * FROM users WHERE id = :id', ['id' => $val]);
                 $contacts = User::where('id', $val)->get();
             }
            
@@ -67,7 +51,6 @@ class ContactsController extends Controller
 
             foreach ($estas as $esta) {
                 $value = $esta->user_id;
-                // $contacts = DB::select('SELECT * FROM users WHERE id = :id', ['id' => $value]);
                 $contacts = User::where('id', $value)->get();
             }
 

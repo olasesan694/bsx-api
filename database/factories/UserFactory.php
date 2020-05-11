@@ -17,7 +17,6 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(User::class, function (Faker $faker) {
-    // 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
     return [
         'name' => $faker->name,
         'phone' => $faker->phoneNumber,
@@ -44,16 +43,6 @@ $factory->define(App\Message::class, function (Faker $faker) {
 
 // fake factory for invites
 $factory->define(App\Invite::class, function (Faker $faker) {
-    // return [
-    //     'user_id' => 1,
-    //     'friend_id' => 2,
-    //     'friend_phone' => $faker->phoneNumber
-    // ];
-    // return [
-    //     'user_id' => $faker->numberBetween($min = 1, $max = 30),
-    //     'friend_id' => $faker->numberBetween($min = 1, $max = 30),
-    //     'friend_phone' => $faker->phoneNumber
-    // ];
     
     do {
         $userid = rand(1, 15);

@@ -84,8 +84,8 @@
             @endif
 
             <div class="content">
-                <h2>Live online shopping with a friend </h2>
-                <h3> Using Brisebox </h3>
+                <h2>Live online shopping with a spouse </h2>
+                <h3> Find the Brisebox button when shopping online. </h3>
                 
             </div>
         </div>

@@ -38,7 +38,6 @@ class NewMessage implements ShouldBroadcast
     {
         // only the user that we are sending the message to is only going to listen on this channel.
         return new PrivateChannel('messages.' . $this->message->to);
-        // return new PrivateChannel('larashopapp.' . $this->message->to);
     }
 
     // validate each user that wants to join this PRIVATE channel will need to 
@@ -47,9 +46,4 @@ class NewMessage implements ShouldBroadcast
     {
         return ["message" => $this->message]; // Adds a key of message | Added to our event and sent as data to our component.
     }
-
-    // public function broadcastAs()
-    // {
-    //     return 'NewMessage';
-    // }
 }
