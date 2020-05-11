@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\User;
+use App\Invite;
 use App\Message;
 use App\Events\NewMessage;
 // use Illuminate\Support\Facades\DB;
