@@ -25,6 +25,7 @@ class ContactsController extends Controller
         // $contacts = DB::select('SELECT friend_id FROM invites WHERE user_id = :id', ['id' => auth()->id()]);
         $friendIds = Invite::select(\DB::raw("friend_id"))
             ->where('user_id', auth()->id())
+            ->limit(1)
             ->get();
 
         $contacts = User::where('id', '==', $friendIds)->get();
