@@ -28,7 +28,7 @@ class ContactsController extends Controller
             ->limit(1)
             ->get();
 
-        $contacts = User::where('id', '==', $friendIds)->get();
+        $contacts = User::where('id', $friendIds)->get();
 
         // // gets user id (inviter) from the invites table
         // $users = DB::select('SELECT user_id FROM invites WHERE user_id = :id LIMIT 1', ['id' => auth()->id()]);
