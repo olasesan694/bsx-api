@@ -22,7 +22,7 @@ class ContactsController extends Controller
 
         // // get all users except the authenticated one
         // $contacts = User::where('id', '!=', auth()->id())->get();
-        $friendIds = DB::select('SELECT friend_id FROM invites WHERE user_id = :id', ['id' => auth()->id()])->limit(1)->get();
+        $friendIds = DB::select('SELECT friend_id FROM invites WHERE user_id = :id', ['id' => auth()->id()])->get();
         // $friendIds = Invite::select(\DB::raw("friend_id"))
         //     ->where('user_id', auth()->id())
         //     ->limit(1)
