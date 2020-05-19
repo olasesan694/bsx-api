@@ -52,7 +52,7 @@
             /* background-color: rgb(0, 39, 97); */
             /* background-color: rgb(233, 253, 144); */
             background-color: rgb(248, 61, 117);
-            background-image: linear-gradient(to right, rgb(255, 86, 136) , rgb(255, 121, 87));
+            background-image: linear-gradient(to right, rgb(255, 86, 136) 50%, rgb(255, 121, 87));
             color: #ffffff;
             font-family: 'Nunito', sans-serif;
             font-weight: 200;

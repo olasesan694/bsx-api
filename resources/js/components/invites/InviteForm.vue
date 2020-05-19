@@ -2,7 +2,7 @@
     <div class="col-md-8 mt-4 invite">
         <div class="card card-default">
             <div class="card-header">
-                Invite someone to shop with you
+                Invite someone to shop with you.
             </div>
             <div class="card-body">
                 <form class="form-inline" action="/invite/send" method="POST" @submit.prevent="addFriend()">

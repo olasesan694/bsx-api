@@ -48444,7 +48444,7 @@ var render = function() {
   return _c("div", { staticClass: "col-md-8 mt-4 invite" }, [
     _c("div", { staticClass: "card card-default" }, [
       _c("div", { staticClass: "card-header" }, [
-        _vm._v("\n            Invite someone to shop with you\n        ")
+        _vm._v("\n            Invite someone to shop with you.\n        ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "card-body" }, [
