@@ -26,5 +26,7 @@ class AppServiceProvider extends ServiceProvider
     {
         // Resolves the specified key too long migration error.
         Schema::defaultStringLength(191);
+        // ssl 
+        $this->app['request']->server->set('HTTPS', 'on');
     }
 }
