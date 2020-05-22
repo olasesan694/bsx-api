@@ -94,9 +94,9 @@
             @endif --}}
 
             <div class="content">
-                <h2>Live online shopping with a friend </h2>
-                <h3> Find the Brisebox button when shopping online. </h3>
-                <a href="https://brisebox.com">Learn more ...</a>
+                <h2>Powered by Brisebox</h2>
+                <h3> Find the Brisebox Button when Shopping Online. </h3>
+                <a href="https://retailers.brisebox.com">Learn more ...</a>
             </div>
         </div>
 
