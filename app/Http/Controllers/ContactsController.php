@@ -43,7 +43,8 @@ class ContactsController extends Controller
             foreach ($these as $the) {
                 $val = $the->friend_id;
                 $contacts = User::where('id', $val)->get();
-                print_r($contacts);
+                print_r('PRINTED:: ', $contacts);
+                dd('DUMPED:: ', $contacts);
             }
            
         } else if (auth()->id() == $this->fid) { // gets the friend's contacts if they are logged in 
@@ -53,7 +54,8 @@ class ContactsController extends Controller
             foreach ($estas as $esta) {
                 $value = $esta->user_id;
                 $contacts = User::where('id', $value)->get();
-                print_r($contacts);
+                print_r('PRINTED:: ', $contacts);
+                dd('DUMPED:: ', $contacts);
             }
 
         } else { // else no contacts.
