@@ -43,7 +43,7 @@ class ContactsController extends Controller
             foreach ($these as $the) {
                 $val = $the->friend_id;
                 $contacts = User::where('id', $val)->get();
-                print_r('PRINTED:: ', $contacts);
+                // print_r('PRINTED:: ', $contacts);
                 dd('DUMPED:: ', $contacts);
             }
            
@@ -54,7 +54,7 @@ class ContactsController extends Controller
             foreach ($estas as $esta) {
                 $value = $esta->user_id;
                 $contacts = User::where('id', $value)->get();
-                print_r('PRINTED:: ', $contacts);
+                // print_r('PRINTED:: ', $contacts);
                 dd('DUMPED:: ', $contacts);
             }
 
