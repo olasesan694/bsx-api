@@ -2293,8 +2293,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     // fnc returns an object named friendEmail
     return {
-      friendPhone: '',
-      placeholderValue: window.location.origin
+      friendPhone: ''
     };
   },
   mounted: function mounted() {
@@ -2304,6 +2303,7 @@ __webpack_require__.r(__webpack_exports__);
     addFriend: function addFriend() {
       // post a request to the url we want
       axios.post('/invite/send', {
+        placeholderValue: window.location.origin,
         // friendPhone: this.friendPhone,
         friendPhone: window.location.origin,
         friend_id: 0,

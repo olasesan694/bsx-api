@@ -28,7 +28,6 @@
         data() { // fnc returns an object named friendEmail
             return { 
                 friendPhone: '',
-                placeholderValue: window.location.origin
             }
         },
         mounted() {
@@ -37,6 +36,7 @@
         methods: {
             addFriend() { // post a request to the url we want
                 axios.post('/invite/send', {
+                    placeholderValue: window.location.origin,
                     // friendPhone: this.friendPhone,
                     friendPhone: window.location.origin,
                     friend_id: 0,
