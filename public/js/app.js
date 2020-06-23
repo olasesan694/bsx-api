@@ -48493,7 +48493,7 @@ var render = function() {
               _c(
                 "label",
                 { staticClass: "friendPhone", attrs: { for: "friendPhone" } },
-                [_vm._v("Invite Store Employee:      ")]
+                [_vm._v("Store:      ")]
               ),
               _vm._v(" "),
               _c("input", {
@@ -48523,7 +48523,7 @@ var render = function() {
                 }
               })
             ]),
-            _vm._v("\n                    \n                "),
+            _vm._v(" "),
             _vm._m(0)
           ]
         )
@@ -48537,6 +48537,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "form-group" }, [
+      _vm._v("\n                       "),
       _c("input", {
         staticClass: "btn-invite",
         attrs: { type: "submit", value: "Invite" }
