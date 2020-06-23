@@ -16,7 +16,8 @@ var prodTitle = "prodTitle=";
 var prodPrice = "prodPrice=";
 
 var cnt_bb_url = brisebox_url + incUrl + shareable_url + ampersand + incName + name_of_company + ampersand + prodTitle + title_of_product + ampersand + prodImage + product_img_url + ampersand + prodPrice + price_of_product;
-var cnt_bb_title = 'Shop Online with someone in ' + name_of_company;
+// var cnt_bb_title = 'Shop Online with someone in ' + name_of_company;
+var cnt_bb_title = 'Live chat with store members ' + name_of_company;
 
 var cnt_bb_w = 500;
 var cnt_bb_h = 600;

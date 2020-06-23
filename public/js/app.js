@@ -2288,7 +2288,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     // fnc returns an object named friendEmail
@@ -2297,8 +2296,7 @@ __webpack_require__.r(__webpack_exports__);
       placeholderValue: window.location.origin
     };
   },
-  mounted: function mounted() {
-    console.log('YOUR COMPONENT IS NOW MOUNTED SISTER.');
+  mounted: function mounted() {// console.log('YOUR COMPONENT IS NOW MOUNTED.')
   },
   methods: {
     addFriend: function addFriend() {
@@ -2306,7 +2304,6 @@ __webpack_require__.r(__webpack_exports__);
       axios.post('/invite/send', {
         // friendPhone: this.friendPhone,
         friendPhone: window.location.origin,
-        // domainValue: window.location.origin,
         friend_id: 0,
         url: "https://connect.brisebox.com/accept" + window.location.search
       }).then(function (response) {
@@ -48510,7 +48507,8 @@ var render = function() {
                 attrs: {
                   type: "text",
                   name: "friendPhone",
-                  placeholder: [[_vm.placeholderValue]]
+                  placeholder: [[_vm.placeholderValue]],
+                  disabled: ""
                 },
                 domProps: { value: _vm.friendPhone },
                 on: {

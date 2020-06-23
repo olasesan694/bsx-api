@@ -9,7 +9,7 @@
 
     <meta name="userId" content="{{ Auth::check() ? Auth::user()->id : 'null' }}">
 
-    <title>Invite someone using {{ config('app.name', 'Laravel') }}</title>
+    <title>Invite Store Member | {{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>

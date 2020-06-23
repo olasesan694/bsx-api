@@ -10,7 +10,7 @@
                         <!-- <label for="friendPhone" class="friendPhone">Invite Store Employee: &nbsp;&nbsp;&nbsp;&nbsp; +1</label> -->
                         <label for="friendPhone" class="friendPhone">Store: &nbsp;&nbsp;&nbsp;&nbsp; </label> 
                         <!-- <input type="text" name="friendPhone" v-model="friendPhone" placeholder="3335557777" class="form-control"> -->
-                        <input type="text" name="friendPhone" v-model="friendPhone" :placeholder="[[ placeholderValue ]]" class="form-control"> 
+                        <input type="text" name="friendPhone" v-model="friendPhone" :placeholder="[[ placeholderValue ]]" class="form-control" disabled> 
                     </div>
                     
                     <div class="form-group">
@@ -20,7 +20,6 @@
             </div>
         </div>
     </div>
-
 </template>
 
 <script>
@@ -32,14 +31,13 @@
             }
         },
         mounted() {
-            console.log('YOUR COMPONENT IS NOW MOUNTED SISTER.')
+            // console.log('YOUR COMPONENT IS NOW MOUNTED.')
         },
         methods: {
             addFriend() { // post a request to the url we want
                 axios.post('/invite/send', {
                     // friendPhone: this.friendPhone,
                     friendPhone: window.location.origin,
-                    // domainValue: window.location.origin,
                     friend_id: 0,
                     url: "https://connect.brisebox.com/accept" + window.location.search
                 })
