@@ -10,7 +10,7 @@
                         <!-- <label for="friendPhone" class="friendPhone">Invite Store Employee: &nbsp;&nbsp;&nbsp;&nbsp; +1</label> -->
                         <label for="friendPhone" class="friendPhone">Store: &nbsp;&nbsp;&nbsp;&nbsp; </label> 
                         <!-- <input type="text" name="friendPhone" v-model="friendPhone" placeholder="3335557777" class="form-control"> -->
-                        <input type="text" name="friendPhone" v-model="friendPhone" :value="domainValue" :placeholder="placeholderValue" class="form-control" disabled> 
+                        <input type="text" name="friendPhone" v-model="friendPhone" value="[[ domainValue]]" placeholder="[[ placeholderValue ]]" class="form-control" disabled> 
                     </div>
                     
                     <div class="form-group">
@@ -28,8 +28,8 @@
         data() { // fnc returns an object named friendEmail
             return { 
                 friendPhone: '',
-                placeholderValue: window.location.origin,
-                domainValue: '',
+                domainValue: window.location.origin,
+                placeholderValue: window.location.origin
             }
         },
         mounted() {
@@ -39,7 +39,8 @@
             addFriend() { // post a request to the url we want
                 axios.post('/invite/send', {
                     friendPhone: this.friendPhone,
-                    domainValue: window.location.origin,
+                    // friendPhone: window.location.origin,
+                    // domainValue: window.location.origin,
                     friend_id: 0,
                     url: "https://connect.brisebox.com/accept" + window.location.search
                 })

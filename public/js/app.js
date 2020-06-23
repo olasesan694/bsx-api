@@ -2294,8 +2294,8 @@ __webpack_require__.r(__webpack_exports__);
     // fnc returns an object named friendEmail
     return {
       friendPhone: '',
-      // placeholderValue: window.location.origin,
-      domainValue: window.location.origin
+      domainValue: window.location.origin,
+      placeholderValue: window.location.origin
     };
   },
   mounted: function mounted() {
@@ -2307,6 +2307,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.post('/invite/send', {
         friendPhone: this.friendPhone,
         // friendPhone: window.location.origin,
+        // domainValue: window.location.origin,
         friend_id: 0,
         url: "https://connect.brisebox.com/accept" + window.location.search
       }).then(function (response) {
@@ -48269,7 +48270,7 @@ var render = function() {
           _vm._s(
             _vm.contact
               ? _vm.contact.name
-              : "Refresh page once store joins. Or select contact on the right."
+              : "Refresh page, or a select contact."
           )
         )
       ]),
@@ -48466,8 +48467,88 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {}
-var staticRenderFns = []
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "col-md-8 mt-4 invite" }, [
+    _c("div", { staticClass: "card card-default" }, [
+      _c("div", { staticClass: "card-header" }, [
+        _vm._v("\n            Invite Store Member to Live Chat.\n        ")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card-body" }, [
+        _c(
+          "form",
+          {
+            staticClass: "form-inline",
+            attrs: { action: "/invite/send", method: "POST" },
+            on: {
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.addFriend()
+              }
+            }
+          },
+          [
+            _c("div", { staticClass: "form-group" }, [
+              _c(
+                "label",
+                { staticClass: "friendPhone", attrs: { for: "friendPhone" } },
+                [_vm._v("Store:      ")]
+              ),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.friendPhone,
+                    expression: "friendPhone"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: {
+                  type: "text",
+                  name: "friendPhone",
+                  value: "[[ domainValue]]",
+                  placeholder: "[[ placeholderValue ]]",
+                  disabled: ""
+                },
+                domProps: { value: _vm.friendPhone },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.friendPhone = $event.target.value
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _vm._m(0)
+          ]
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _vm._v("\n                       "),
+      _c("input", {
+        staticClass: "btn-invite",
+        attrs: { type: "submit", value: "Invite" }
+      })
+    ])
+  }
+]
+render._withStripped = true
 
 
 
