@@ -115,7 +115,7 @@
 
         <script>
             function showCompanyEmail() {
-                var checkBox = document.getElementById("forcompanycheck");
+                var checkBox = document.getElementById("forcompanycheckbox");
                 var incdomain = document.getElementById("forcompany");
                 if (checkBox.checked == true){
                     incdomain.style.display = "block";
