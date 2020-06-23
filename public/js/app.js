@@ -2288,11 +2288,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     // fnc returns an object named friendEmail
     return {
-      friendPhone: ''
+      friendPhone: '',
+      placeholderValue: window.location.origin
     };
   },
   mounted: function mounted() {
@@ -48491,7 +48493,7 @@ var render = function() {
               _c(
                 "label",
                 { staticClass: "friendPhone", attrs: { for: "friendPhone" } },
-                [_vm._v("Invite Store Employee: ")]
+                [_vm._v("Invite Store Employee:      ")]
               ),
               _vm._v(" "),
               _c("input", {
@@ -48504,7 +48506,12 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { type: "text", name: "friendPhone", disabled: "" },
+                attrs: {
+                  type: "text",
+                  name: "friendPhone",
+                  placeholder: [[_vm.placeholderValue]],
+                  disabled: ""
+                },
                 domProps: { value: _vm.friendPhone },
                 on: {
                   input: function($event) {
@@ -48516,7 +48523,7 @@ var render = function() {
                 }
               })
             ]),
-            _vm._v(" "),
+            _vm._v("\n                    \n                "),
             _vm._m(0)
           ]
         )
