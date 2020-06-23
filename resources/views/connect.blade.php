@@ -17,7 +17,7 @@
         </div>
 
         {{-- <h4> Shop live with someone in <div id="lowercase-brand"></div> </h4>  --}}
-        <h4> Live Chat with a Store Employee <div id="lowercase-brand"></div> </h4> 
+        <h4> Live Chat with a Store Member <div id="lowercase-brand"></div> </h4> 
         <script>
             const companyname = extractCompanyName().toLowerCase();
             document.getElementById("lowercase-brand").innerHTML = companyname;

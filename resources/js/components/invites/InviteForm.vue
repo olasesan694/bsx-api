@@ -2,7 +2,7 @@
     <div class="col-md-8 mt-4 invite">
         <div class="card card-default">
             <div class="card-header">
-                Invite Store Employee to Live Chat.
+                Invite Store Member to Live Chat.
             </div>
             <div class="card-body">
                 <form class="form-inline" action="/invite/send" method="POST" @submit.prevent="addFriend()">
@@ -10,7 +10,7 @@
                         <!-- <label for="friendPhone" class="friendPhone">Invite Store Employee: &nbsp;&nbsp;&nbsp;&nbsp; +1</label> -->
                         <label for="friendPhone" class="friendPhone">Store: &nbsp;&nbsp;&nbsp;&nbsp; </label> 
                         <!-- <input type="text" name="friendPhone" v-model="friendPhone" placeholder="3335557777" class="form-control"> -->
-                        <input type="text" name="friendPhone" v-model="friendPhone" :placeholder="placeholderValue" class="form-control" disabled> 
+                        <input type="text" name="friendPhone" v-model="friendPhone" :value="domainValue" :placeholder="placeholderValue" class="form-control" disabled> 
                     </div>
                     
                     <div class="form-group">
@@ -28,6 +28,8 @@
         data() { // fnc returns an object named friendEmail
             return { 
                 friendPhone: '',
+                placeholderValue: window.location.origin,
+                domainValue: '',
             }
         },
         mounted() {
@@ -36,9 +38,8 @@
         methods: {
             addFriend() { // post a request to the url we want
                 axios.post('/invite/send', {
-                    placeholderValue: window.location.origin,
-                    // friendPhone: this.friendPhone,
-                    friendPhone: window.location.origin,
+                    friendPhone: this.friendPhone,
+                    domainValue: window.location.origin,
                     friend_id: 0,
                     url: "https://connect.brisebox.com/accept" + window.location.search
                 })
