@@ -48506,7 +48506,14 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { type: "text", name: "friendPhone", disabled: "" },
+                attrs: {
+                  type: "text",
+                  name: "friendPhone",
+                  "{{": "",
+                  placeholder: "",
+                  "}}": "",
+                  disabled: ""
+                },
                 domProps: { value: _vm.friendPhone },
                 on: {
                   input: function($event) {
@@ -48516,8 +48523,7 @@ var render = function() {
                     _vm.friendPhone = $event.target.value
                   }
                 }
-              }),
-              _vm._v(" " + _vm._s(_vm.placeholder) + "\n                ")
+              })
             ]),
             _vm._v(" "),
             _vm._m(0)
