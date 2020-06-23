@@ -49,6 +49,7 @@
                                         <input type="checkbox" id="forcompanycheckbox" onclick="showCompanyEmail()">
                                     </div>
                                 </div>
+
                                 <div id="forcompany" style="display:none" class="form-group row">
                                     <label for="domain" class="col-md-4 col-form-label text-md-right"> Website url </label>
 
@@ -118,7 +119,7 @@
                 var checkBox = document.getElementById("forcompanycheckbox");
                 var incdomain = document.getElementById("forcompany");
                 if (checkBox.checked == true){
-                    incdomain.style.display = "block";
+                    incdomain.style.display = "relative";
                 } else {
                     incdomain.style.display = "none";
                 }
