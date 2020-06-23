@@ -2294,7 +2294,6 @@ __webpack_require__.r(__webpack_exports__);
     // fnc returns an object named friendEmail
     return {
       friendPhone: '',
-      domainValue: window.location.origin,
       placeholderValue: window.location.origin
     };
   },
@@ -2305,8 +2304,8 @@ __webpack_require__.r(__webpack_exports__);
     addFriend: function addFriend() {
       // post a request to the url we want
       axios.post('/invite/send', {
-        friendPhone: this.friendPhone,
-        // friendPhone: window.location.origin,
+        // friendPhone: this.friendPhone,
+        friendPhone: window.location.origin,
         // domainValue: window.location.origin,
         friend_id: 0,
         url: "https://connect.brisebox.com/accept" + window.location.search
@@ -48511,8 +48510,7 @@ var render = function() {
                 attrs: {
                   type: "text",
                   name: "friendPhone",
-                  value: "[[ domainValue]]",
-                  placeholder: "[[ placeholderValue ]]",
+                  placeholder: [[_vm.placeholderValue]],
                   disabled: ""
                 },
                 domProps: { value: _vm.friendPhone },
