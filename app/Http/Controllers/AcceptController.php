@@ -14,9 +14,6 @@ class AcceptController extends Controller
 {
     //
 
-    private $inviter_ids;
-
-
     public function index () {
         return view ('accept');
     }
@@ -27,8 +24,13 @@ class AcceptController extends Controller
         // updates Friendid
         $affected = DB::update('UPDATE invites SET friend_id=:sFriend WHERE friend_phone=:sPhone', [
             'sFriend' => auth()->id(), 
-            'sPhone' => $user->phone
+            // 'sPhone' => $user->phone
+            'sPhone' => $user->email
         ]); 
+        // $affected = DB::update('UPDATE invites SET friend_id=:sFriend WHERE friend_phone=:sPhone', [
+        //     'sFriend' => auth()->id(), 
+        //     'sPhone' => $user->phone
+        // ]); 
 
         // // added s.o. - user and inc live chat
         // $estas = DB::select('SELECT user_id FROM invites WHERE friend_id = :id', ['id' => auth()->id()]);

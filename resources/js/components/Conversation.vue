@@ -1,6 +1,6 @@
 <template>
     <div class="conversation">
-        <h1>{{ contact ? contact.name : 'Refresh page once friend joins. Or select a contact on the right.' }}</h1>
+        <h1>{{ contact ? contact.name : 'Refresh page once store joins. Or select contact on the right.' }}</h1>
         <MessagesFeed :contact="contact" :messages="messages"/>
         <MessageComposer @send="sendMessage"/>
     </div>

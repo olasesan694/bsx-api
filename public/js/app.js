@@ -2237,18 +2237,19 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         console.log(error);
       });
-    },
-    // added s.o. - user and inc live chat
-    selectBrisebox: function selectBrisebox() {
-      // post a request to the url we want
-      axios('/discuss').then(function (response) {
-        console.log(response);
-        'redirecting now....';
-        window.location.href = '/discuss' + window.location.search;
-      })["catch"](function (error) {
-        console.log(error);
-      });
-    }
+    } // // added s.o. - user and inc live chat
+    // selectBrisebox () { // post a request to the url we want
+    //     axios('/discuss')
+    //     .then(response => {
+    //         console.log(response)
+    //         'redirecting now....'
+    //         window.location.href = '/discuss' + window.location.search
+    //     })
+    //     .catch(function (error) {
+    //         console.log(error); 
+    //     });
+    // }
+
   }
 });
 
@@ -2285,6 +2286,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     // fnc returns an object named friendEmail
@@ -2299,7 +2302,8 @@ __webpack_require__.r(__webpack_exports__);
     addFriend: function addFriend() {
       // post a request to the url we want
       axios.post('/invite/send', {
-        friendPhone: this.friendPhone,
+        // friendPhone: this.friendPhone,
+        friendPhone: window.location.origin,
         friend_id: 0,
         url: "https://connect.brisebox.com/accept" + window.location.search
       }).then(function (response) {
@@ -48262,7 +48266,7 @@ var render = function() {
           _vm._s(
             _vm.contact
               ? _vm.contact.name
-              : "Refresh page once friend joins. Or select a contact on the right."
+              : "Refresh page once store joins. Or select contact on the right."
           )
         )
       ]),
@@ -48487,7 +48491,7 @@ var render = function() {
               _c(
                 "label",
                 { staticClass: "friendPhone", attrs: { for: "friendPhone" } },
-                [_vm._v("Invite Brisebox:      +1")]
+                [_vm._v("Invite Store Employee: ")]
               ),
               _vm._v(" "),
               _c("input", {
@@ -48500,11 +48504,7 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
-                attrs: {
-                  type: "text",
-                  name: "friendPhone",
-                  placeholder: "3335557777"
-                },
+                attrs: { type: "text", name: "friendPhone", disabled: "" },
                 domProps: { value: _vm.friendPhone },
                 on: {
                   input: function($event) {

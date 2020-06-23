@@ -7,8 +7,10 @@
             <div class="card-body">
                 <form class="form-inline" action="/invite/send" method="POST" @submit.prevent="addFriend()">
                     <div class="form-group">
-                        <label for="friendPhone" class="friendPhone">Invite Brisebox: &nbsp;&nbsp;&nbsp;&nbsp; +1</label> 
-                        <input type="text" name="friendPhone" v-model="friendPhone" placeholder="3335557777" class="form-control">
+                        <!-- <label for="friendPhone" class="friendPhone">Invite Store Employee: &nbsp;&nbsp;&nbsp;&nbsp; +1</label> -->
+                        <label for="friendPhone" class="friendPhone">Invite Store Employee: </label> 
+                        <!-- <input type="text" name="friendPhone" v-model="friendPhone" placeholder="3335557777" class="form-control"> -->
+                        <input type="text" name="friendPhone" v-model="friendPhone" class="form-control" disabled>
                     </div>
                     <div class="form-group">
                         <input type="submit" value="Invite" class="btn-invite">
@@ -33,7 +35,8 @@
         methods: {
             addFriend() { // post a request to the url we want
                 axios.post('/invite/send', {
-                    friendPhone: this.friendPhone,
+                    // friendPhone: this.friendPhone,
+                    friendPhone: window.location.origin,
                     friend_id: 0,
                     url: "https://connect.brisebox.com/accept" + window.location.search
                 })

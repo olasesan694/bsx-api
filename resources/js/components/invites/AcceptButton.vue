@@ -44,20 +44,20 @@
                 .catch(function (error) {
                     console.log(error); 
                 });
-            },
-
-            // added s.o. - user and inc live chat
-            selectBrisebox () { // post a request to the url we want
-                axios('/discuss')
-                .then(response => {
-                    console.log(response)
-                    'redirecting now....'
-                    window.location.href = '/discuss' + window.location.search
-                })
-                .catch(function (error) {
-                    console.log(error); 
-                });
             }
+
+            // // added s.o. - user and inc live chat
+            // selectBrisebox () { // post a request to the url we want
+            //     axios('/discuss')
+            //     .then(response => {
+            //         console.log(response)
+            //         'redirecting now....'
+            //         window.location.href = '/discuss' + window.location.search
+            //     })
+            //     .catch(function (error) {
+            //         console.log(error); 
+            //     });
+            // }
         }
     }
 </script>
