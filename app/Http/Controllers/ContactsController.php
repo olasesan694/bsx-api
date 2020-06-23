@@ -43,8 +43,6 @@ class ContactsController extends Controller
             foreach ($these as $the) {
                 $val = $the->friend_id;
                 $contacts = User::where('id', $val)->get();
-                // print_r('PRINTED:: ', $contacts);
-                dd('DUMPED:: ', $contacts);
             }
            
         } else if (auth()->id() == $this->fid) { // gets the friend's contacts if they are logged in 
@@ -54,16 +52,12 @@ class ContactsController extends Controller
             foreach ($estas as $esta) {
                 $value = $esta->user_id;
                 $contacts = User::where('id', $value)->get();
-                // print_r('PRINTED:: ', $contacts);
-                dd('DUMPED:: ', $contacts);
             }
 
         } else { // else no contacts.
             $contacts = [];
         }
 
-// Brisebox info in array. Same format as database. Modify when db formate changes.
-        // $contacts = ['', ];
 
         // get a collection of items where sender_id is the user who sent us a message
         // and messages_count is the number of unread messages we have from him

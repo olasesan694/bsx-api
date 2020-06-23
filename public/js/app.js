@@ -2212,18 +2212,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     // fnc returns an object named friendEmail
     return {};
   },
   mounted: function mounted() {
-    console.log('YOUR COMPONENT IS NOW MOUNTED BROTHER.');
+    console.log('YOUR COMPONENT IS NOW MOUNTED.');
   },
   methods: {
     acceptInvite: function acceptInvite() {
       // post a request to the url we want
       axios.post('/accept/send', {}).then(function (response) {
+        window.location.href = '/discuss' + window.location.search;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    // added s.o. - user and inc live chat
+    selectBrisebox: function selectBrisebox() {
+      // post a request to the url we want
+      axios('/discuss').then(function (response) {
+        console.log(response);
+        'redirecting now....';
         window.location.href = '/discuss' + window.location.search;
       })["catch"](function (error) {
         console.log(error);
@@ -48386,7 +48406,9 @@ var render = function() {
   return _c("div", { staticClass: "col-md-8 mt-4 invite" }, [
     _c("div", { staticClass: "card card-default" }, [
       _c("div", { staticClass: "card-header" }, [
-        _vm._v("\n            Accept Your Invitation.\n        ")
+        _vm._v(
+          "\n            Accept your Live Chat Invitation from a Customer.\n        "
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "card-body" }, [
@@ -48444,7 +48466,7 @@ var render = function() {
   return _c("div", { staticClass: "col-md-8 mt-4 invite" }, [
     _c("div", { staticClass: "card card-default" }, [
       _c("div", { staticClass: "card-header" }, [
-        _vm._v("\n            Invite someone to shop with you.\n        ")
+        _vm._v("\n            Invite Store Employee to Live Chat.\n        ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "card-body" }, [
@@ -48465,7 +48487,7 @@ var render = function() {
               _c(
                 "label",
                 { staticClass: "friendPhone", attrs: { for: "friendPhone" } },
-                [_vm._v("Friend Phone:      +1")]
+                [_vm._v("Invite Brisebox:      +1")]
               ),
               _vm._v(" "),
               _c("input", {

@@ -2,12 +2,12 @@
     <div class="col-md-8 mt-4 invite">
         <div class="card card-default">
             <div class="card-header">
-                Invite someone to shop with you.
+                Invite Store Employee to Live Chat.
             </div>
             <div class="card-body">
                 <form class="form-inline" action="/invite/send" method="POST" @submit.prevent="addFriend()">
                     <div class="form-group">
-                        <label for="friendPhone" class="friendPhone">Friend Phone: &nbsp;&nbsp;&nbsp;&nbsp; +1</label> 
+                        <label for="friendPhone" class="friendPhone">Invite Brisebox: &nbsp;&nbsp;&nbsp;&nbsp; +1</label> 
                         <input type="text" name="friendPhone" v-model="friendPhone" placeholder="3335557777" class="form-control">
                     </div>
                     <div class="form-group">
