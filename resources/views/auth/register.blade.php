@@ -43,6 +43,27 @@
                                 </div>
 
                                 <div class="form-group row">
+                                    <label for="domain" class="col-md-4 col-form-label text-md-right">{{ Company account? }}</label>
+
+                                    <div class="col-md-6">
+                                        <input type="checkbox" id="forcompanycheckbox" onclick="showCompanyEmail()">
+                                    </div>
+                                </div>
+                                <div id="forcompany" style="display:none" class="form-group row">
+                                    <label for="domain" class="col-md-4 col-form-label text-md-right">{{ Website url }}</label>
+
+                                    <div class="col-md-6">
+                                        <input id="domain" type="domain" class="form-control @error('domain') is-invalid @enderror" name="domain" value="{{ old('domain') }}" placeholder="https://www.example.com" required autocomplete="domain">
+
+                                        @error('domain')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
                                     <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Phone') }}</label>
 
                                     <div class="col-md-6">
@@ -92,6 +113,17 @@
             </div>
         </div>
 
+        <script>
+            function showCompanyEmail() {
+                var checkBox = document.getElementById("forcompanycheck");
+                var incdomain = document.getElementById("forcompany");
+                if (checkBox.checked == true){
+                    incdomain.style.display = "block";
+                } else {
+                    incdomain.style.display = "none";
+                }
+            }
+        </script>
     </section>
 
     <section id="bottom-half">
