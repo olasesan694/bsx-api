@@ -10,7 +10,7 @@
                         <!-- <label for="friendPhone" class="friendPhone">Invite Store Employee: &nbsp;&nbsp;&nbsp;&nbsp; +1</label> -->
                         <label for="friendPhone" class="friendPhone">Store: &nbsp;&nbsp;&nbsp;&nbsp; </label> 
                         <!-- <input type="text" name="friendPhone" v-model="friendPhone" placeholder="3335557777" class="form-control"> -->
-                        <input type="text" name="friendPhone" v-model="friendPhone" :placeholder="[[ placeholderValue ]]" class="form-control" disabled> 
+                        <input type="text" name="friendPhone" v-model="friendPhone" :placeholder="[[ placeholderValue ]]" class="form-control"> 
                     </div>
                     
                     <div class="form-group">
