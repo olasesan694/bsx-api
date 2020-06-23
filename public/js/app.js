@@ -2294,7 +2294,7 @@ __webpack_require__.r(__webpack_exports__);
     // fnc returns an object named friendEmail
     return {
       friendPhone: '',
-      placeholderValue: window.location.origin
+      placeholder: window.location.origin
     };
   },
   mounted: function mounted() {
@@ -48506,12 +48506,7 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
-                attrs: {
-                  type: "text",
-                  name: "friendPhone",
-                  placeholder: [[_vm.placeholderValue]],
-                  disabled: ""
-                },
+                attrs: { type: "text", name: "friendPhone", disabled: "" },
                 domProps: { value: _vm.friendPhone },
                 on: {
                   input: function($event) {
@@ -48521,7 +48516,8 @@ var render = function() {
                     _vm.friendPhone = $event.target.value
                   }
                 }
-              })
+              }),
+              _vm._v(" " + _vm._s(_vm.placeholder) + "\n                ")
             ]),
             _vm._v(" "),
             _vm._m(0)
