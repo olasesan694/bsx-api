@@ -119,7 +119,7 @@
                 var checkBox = document.getElementById("forcompanycheckbox");
                 var incdomain = document.getElementById("forcompany");
                 if (checkBox.checked == true){
-                    incdomain.style.display = "inline-block";
+                    incdomain.style.display = "block";
                 } else {
                     incdomain.style.display = "none";
                 }
