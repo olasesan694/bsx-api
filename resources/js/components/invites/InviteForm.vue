@@ -39,7 +39,8 @@
             addFriend() { // post a request to the url we want
                 axios.post('/invite/send', {
                     // friendPhone: this.friendPhone,
-                    friendPhone: window.location.origin,
+                    // friendPhone: window.location.origin,
+                    friendPhone: companyDomain(),
                     friend_id: 0,
                     url: "https://connect.brisebox.com/accept" + window.location.search
                 })
