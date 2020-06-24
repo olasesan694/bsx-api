@@ -25,7 +25,7 @@
 <script>
     export default {
         data() { // fnc returns an object named friendEmail
-            var url = window.location.search.slice(1);  
+            var url = window.location.search;  
             var domain = decodeURIComponent(url);
             domain = window.location.origin;
             return { 
@@ -42,7 +42,7 @@
                 axios.post('/invite/send', {
                     // friendPhone: this.friendPhone,
                     // friendPhone: window.location.origin,
-                    friendPhone: companyDomain(),
+                    friendPhone: domain,
                     friend_id: 0,
                     url: "https://connect.brisebox.com/accept" + window.location.search
                 })
