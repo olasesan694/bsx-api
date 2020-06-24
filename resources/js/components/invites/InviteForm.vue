@@ -25,11 +25,13 @@
 <script>
     export default {
         data() { // fnc returns an object named friendEmail
+            var url = window.location.search.slice(1);  
+            var domain = decodeURIComponent(url);
+            domain = window.location.origin;
             return { 
                 friendPhone: '',
+                placeholderValue: domain
                 // placeholderValue: window.location.origin
-                // placeholderValue: extractCompanyURL()
-                placeholderValue: companyDomain()
             }
         },
         mounted() {
@@ -50,12 +52,6 @@
                 .catch(function (error) {
                     console.log(error); 
                 });
-            },
-            companyDomain() {
-                var url = window.location.search.slice(1);  
-                var domain = decodeURIComponent(url);
-                domain = window.location.origin;
-                return domain;
             }
         }
     }
