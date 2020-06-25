@@ -51,10 +51,10 @@
                                 </div>
 
                                 <div id="forcompany" style="display:none" class="form-group row">
-                                    <label for="domain" class="col-md-4 col-form-label text-md-right"> Website URL </label>
+                                    <label for="domain" class="col-md-4 col-form-label text-md-right"> Support Email </label>
 
                                     <div class="col-md-6">
-                                        <input id="domain" type="text" class="form-control @error('domain') is-invalid @enderror" name="domain" value="{{ old('domain') }}" placeholder="https://www.example.com" autocomplete="domain">
+                                        <input id="domain" type="text" class="form-control @error('domain') is-invalid @enderror" name="domain" value="{{ old('domain') }}" placeholder="Support email (required).." autocomplete="domain">
 
                                         @error('domain')
                                             <span class="invalid-feedback" role="alert">

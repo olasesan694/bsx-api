@@ -2289,11 +2289,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['user'],
+  //  props: ['user'],
   data: function data() {
     return {
-      friendPhone: '',
-      user: '' // placeholderValue: extractDomain(),
+      friendPhone: '' // user: ''
+      // placeholderValue: extractDomain(),
       // placeholderValue: window.location.origin
 
     };
@@ -2304,11 +2304,10 @@ __webpack_require__.r(__webpack_exports__);
     addFriend: function addFriend() {
       // post a request to the url we want
       // var user = JSON.parse(this.user) // company's email
-      var user = this.user; // company's email
-
+      // var user = this.user; // company's email
       axios.post('/invite/send', {
-        // friendPhone: this.friendPhone,
-        friendPhone: user,
+        friendPhone: this.friendPhone,
+        // friendPhone: user,
         // friendPhone: window.location.origin,
         // friendPhone: extractDomain(),
         friend_id: 0,
@@ -48507,7 +48506,7 @@ var render = function() {
               _c(
                 "label",
                 { staticClass: "friendPhone", attrs: { for: "friendPhone" } },
-                [_vm._v("Store:      ")]
+                [_vm._v("Store Support Email:      ")]
               ),
               _vm._v(" "),
               _c("input", {
@@ -48523,7 +48522,7 @@ var render = function() {
                 attrs: {
                   type: "text",
                   name: "friendPhone",
-                  placeholder: "********",
+                  placeholder: "Email shown above...",
                   disabled: ""
                 },
                 domProps: { value: _vm.friendPhone },

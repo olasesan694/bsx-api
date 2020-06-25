@@ -14,6 +14,13 @@
                     document.getElementById("uppercase-brand").innerHTML = companyBrand;
                 </script>
                 </div>
+                
+                <p>Store: </p> <p id="lowercase-email"></p>
+                <script>
+                    const supportEmail = extractSupportEmail().toLowerCase();
+                    document.getElementById("uppercase-brand").innerHTML = supportEmail;
+                </script>
+                </div>
 
                 {{-- <h4> Shop live with someone in <div id="lowercase-brand"></div> </h4>  --}}
                 <h4> Live Chat with a Store Member <div id="lowercase-brand"></div> </h4>
@@ -32,8 +39,7 @@
                 <p id="price"></p>
                 <script>extractProductPrice();</script>
 
-                {{ $user = auth()->user() }}
-                <invite-form user={{ $user->email }}></invite-form>
+                <invite-form></invite-form>
 
             </div>
         </div>
