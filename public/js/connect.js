@@ -5,7 +5,7 @@ var name_of_company = document.querySelector("meta[property='bb:company']").getA
 var title_of_product = document.querySelector("meta[property='og:title']").getAttribute("content");
 var price_of_product = document.querySelector("meta[property='bb:price']").getAttribute("content");
 var product_img_url = document.querySelector("meta[property='og:image']").getAttribute("content");
-var domain_url = document.querySelector("meta[property='og:domain']").getAttribute("content"); 
+var domain_url = document.querySelector("meta[property='bb:domain']").getAttribute("content"); 
 
 
 var brisebox_url = 'https://connect.brisebox.com/connect?';

@@ -48517,8 +48517,12 @@ var render = function() {
                 attrs: { type: "text", name: "friendPhone", disabled: "" },
                 domProps: { value: _vm.friendPhone },
                 on: {
-                  value: _vm.extractDomain,
-                  placeholder: _vm.extractDomain,
+                  value: function($event) {
+                    return _vm.extractDomain()
+                  },
+                  placeholder: function($event) {
+                    return _vm.extractDomain()
+                  },
                   input: function($event) {
                     if ($event.target.composing) {
                       return
