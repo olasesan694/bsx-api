@@ -24,7 +24,8 @@
 
 <script>
     export default {
-        data() { // fnc returns an object named friendEmail
+        
+        data() { 
 
             getUrl = window.location.search.slice(1); 
             getUrl = getUrl.replace(/=/g, '": "');
@@ -32,8 +33,8 @@
             getUrl = '{"'+getUrl+'"}';
             var obj = JSON.parse(getUrl);
             domain = obj.origin;
-            console.log(domain);
-            
+            console.log('ISSA DOMAIN WITH VALUE:', domain);
+
             return { 
                 friendPhone: '',
                 placeholderValue: domain,
