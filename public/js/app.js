@@ -2260,60 +2260,9 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/invites/InviteForm.vue?vue&type=script&lang=js& ***!
   \*****************************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    // fnc returns an object named friendEmail
-    return {
-      friendPhone: '',
-      placeholderValue: window.location.origin
-    };
-  },
-  mounted: function mounted() {// console.log('YOUR COMPONENT IS NOW MOUNTED.')
-  },
-  methods: {
-    addFriend: function addFriend() {
-      // post a request to the url we want
-      axios.post('/invite/send', {
-        // friendPhone: this.friendPhone,
-        friendPhone: window.location.origin,
-        friend_id: 0,
-        url: "https://connect.brisebox.com/accept" + window.location.search
-      }).then(function (response) {
-        window.location.href = '/discuss' + window.location.search;
-      })["catch"](function (error) {
-        console.log(error);
-      });
-    }
-  }
-});
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/s.o./Desktop/laravelshopapp/resources/js/components/invites/InviteForm.vue: Unexpected token (33:37)\n\n\u001b[0m \u001b[90m 31 | \u001b[39m        \u001b[36mreturn\u001b[39m { \u001b[0m\n\u001b[0m \u001b[90m 32 | \u001b[39m            friendPhone\u001b[33m:\u001b[39m \u001b[32m''\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 33 | \u001b[39m            placeholderValue\u001b[33m:\u001b[39m auth()\u001b[33m-\u001b[39m\u001b[33m>\u001b[39muser()\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 34 | \u001b[39m            \u001b[90m// placeholderValue: window.location.origin\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 35 | \u001b[39m        }\u001b[0m\n\u001b[0m \u001b[90m 36 | \u001b[39m    }\u001b[33m,\u001b[39m\u001b[0m\n    at Parser._raise (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:723:17)\n    at Parser.raiseWithData (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:716:17)\n    at Parser.raise (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:710:17)\n    at Parser.unexpected (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:8606:16)\n    at Parser.parseExprAtom (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:9865:20)\n    at Parser.parseExprSubscripts (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:9451:23)\n    at Parser.parseMaybeUnary (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:9431:21)\n    at Parser.parseExprOpBaseRightExpr (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:9394:34)\n    at Parser.parseExprOpRightExpr (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:9387:21)\n    at Parser.parseExprOp (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:9353:27)\n    at Parser.parseExprOps (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:9311:17)\n    at Parser.parseMaybeConditional (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:9274:23)\n    at Parser.parseMaybeAssign (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:9229:21)\n    at Parser.parseObjectProperty (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:10313:101)\n    at Parser.parseObjPropValue (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:10338:101)\n    at Parser.parseObjectMember (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:10262:10)\n    at Parser.parseObj (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:10183:25)\n    at Parser.parseExprAtom (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:9808:28)\n    at Parser.parseExprSubscripts (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:9451:23)\n    at Parser.parseMaybeUnary (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:9431:21)\n    at Parser.parseExprOps (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:9301:23)\n    at Parser.parseMaybeConditional (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:9274:23)\n    at Parser.parseMaybeAssign (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:9229:21)\n    at Parser.parseExpression (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:9181:23)\n    at Parser.parseReturnStatement (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:11249:28)\n    at Parser.parseStatementContent (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:10930:21)\n    at Parser.parseStatement (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:10882:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:11456:25)\n    at Parser.parseBlockBody (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:11443:10)\n    at Parser.parseBlock (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:11427:10)\n    at Parser.parseFunctionBody (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:10435:24)\n    at Parser.parseFunctionBodyAndFinish (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:10418:10)\n    at Parser.parseMethod (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:10380:10)\n    at Parser.parseObjectMethod (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:10296:19)\n    at Parser.parseObjPropValue (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:10338:23)\n    at Parser.parseObjectMember (/Users/s.o./Desktop/laravelshopapp/node_modules/@babel/parser/lib/index.js:10262:10)");
 
 /***/ }),
 

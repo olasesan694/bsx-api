@@ -5,6 +5,7 @@ var name_of_company = document.querySelector("meta[property='bb:company']").getA
 var title_of_product = document.querySelector("meta[property='og:title']").getAttribute("content");
 var price_of_product = document.querySelector("meta[property='bb:price']").getAttribute("content");
 var product_img_url = document.querySelector("meta[property='og:image']").getAttribute("content");
+var domain_url = document.querySelector("meta[property='og:domain']").getAttribute("content"); 
 
 
 var brisebox_url = 'https://connect.brisebox.com/connect?';
@@ -14,8 +15,9 @@ var ampersand = "&";
 var prodImage = "prodImage=";
 var prodTitle = "prodTitle=";
 var prodPrice = "prodPrice=";
+var domain = "origin=";
 
-var cnt_bb_url = brisebox_url + incUrl + shareable_url + ampersand + incName + name_of_company + ampersand + prodTitle + title_of_product + ampersand + prodImage + product_img_url + ampersand + prodPrice + price_of_product;
+var cnt_bb_url = brisebox_url + incUrl + shareable_url + ampersand + incName + name_of_company + ampersand + prodTitle + title_of_product + ampersand + prodImage + product_img_url + ampersand + prodPrice + price_of_product + ampersand + domain + domain_url;
 // var cnt_bb_title = 'Shop Online with someone in ' + name_of_company;
 var cnt_bb_title = 'Live chat with store members ' + name_of_company;
 

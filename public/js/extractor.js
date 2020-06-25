@@ -3,14 +3,6 @@
     return decodeURIComponent(customerURL);
   }
 
-  // url
-  function companyDomain () {
-    var url = window.location.search.slice(1);  
-    var domain = decodeURIComponent(url);
-    domain = window.location.origin;
-    return domain;
-  }
-
   function extractCompanyURL () { 
     getUrl = companyUrlInfo();
     getUrl = getUrl.replace(/=/g, '": "');

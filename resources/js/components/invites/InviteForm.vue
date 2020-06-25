@@ -25,12 +25,18 @@
 <script>
     export default {
         data() { // fnc returns an object named friendEmail
-            var url = window.location.search;  
-            var domain = decodeURIComponent(url);
-            domain = window.location.origin;
+
+            getUrl = window.location.search.slice(1); 
+            getUrl = getUrl.replace(/=/g, '": "');
+            getUrl = getUrl.replace(/&/g, '", "');
+            getUrl = '{"'+getUrl+'"}';
+            var obj = JSON.parse(getUrl);
+            domain = obj.origin;
+            console.log(domain);
+            
             return { 
                 friendPhone: '',
-                placeholderValue: domain
+                placeholderValue: domain,
                 // placeholderValue: window.location.origin
             }
         },
