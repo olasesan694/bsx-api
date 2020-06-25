@@ -25,7 +25,8 @@ class AcceptController extends Controller
         $affected = DB::update('UPDATE invites SET friend_id=:sFriend WHERE friend_phone=:sPhone', [
             'sFriend' => auth()->id(), 
             // 'sPhone' => $user->phone
-            'sPhone' => $user->domain
+            'sPhone' => $user->email
+            // 'sPhone' => $user->domain
         ]); 
 
         // // added s.o. - user and inc live chat
