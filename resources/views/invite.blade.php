@@ -17,7 +17,7 @@
                 
                 <p>Store: </p> <p id="lowercase-email"></p>
                 <script>
-                    const supportEmail = extractSupportEmail().toLowerCase();
+                    const supportEmail = extractDomain().toLowerCase();
                     document.getElementById("uppercase-brand").innerHTML = supportEmail;
                 </script>
                 </div>

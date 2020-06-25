@@ -48522,8 +48522,7 @@ var render = function() {
                 attrs: {
                   type: "text",
                   name: "friendPhone",
-                  placeholder: "Email shown above...",
-                  disabled: ""
+                  placeholder: "Email shown above..."
                 },
                 domProps: { value: _vm.friendPhone },
                 on: {
