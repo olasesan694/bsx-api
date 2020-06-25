@@ -24,13 +24,10 @@
 
 <script>
     export default {
-        //  props: ['user'],
         data() { 
 
             return { 
                 friendPhone: '',
-                // user: ''
-                // placeholderValue: extractDomain(),
                 // placeholderValue: window.location.origin
             }
         },
@@ -39,13 +36,8 @@
         },
         methods: {
             addFriend() { // post a request to the url we want
-                // var user = JSON.parse(this.user) // company's email
-                // var user = this.user; // company's email
                 axios.post('/invite/send', {
                     friendPhone: this.friendPhone,
-                    // friendPhone: user,
-                    // friendPhone: window.location.origin,
-                    // friendPhone: extractDomain(),
                     friend_id: 0,
                     url: "https://connect.brisebox.com/accept" + window.location.search
                 })
@@ -55,16 +47,7 @@
                 .catch(function (error) {
                     console.log(error); 
                 });
-            },
-            // extractDomain () {
-            //     getUrl = window.location.search.slice(1); 
-            //     getUrl = getUrl.replace(/=/g, '": "');
-            //     getUrl = getUrl.replace(/&/g, '", "');
-            //     getUrl = '{"'+getUrl+'"}';
-            //     var obj = JSON.parse(getUrl);
-            //     console.log('ISSA DOMAIN WITH VALUE:', obj.origin);
-            //     return obj.origin;
-            // } 
+            }
         }
     }
 </script>

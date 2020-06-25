@@ -2289,12 +2289,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  //  props: ['user'],
   data: function data() {
     return {
-      friendPhone: '' // user: ''
-      // placeholderValue: extractDomain(),
-      // placeholderValue: window.location.origin
+      friendPhone: '' // placeholderValue: window.location.origin
 
     };
   },
@@ -2303,13 +2300,8 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     addFriend: function addFriend() {
       // post a request to the url we want
-      // var user = JSON.parse(this.user) // company's email
-      // var user = this.user; // company's email
       axios.post('/invite/send', {
         friendPhone: this.friendPhone,
-        // friendPhone: user,
-        // friendPhone: window.location.origin,
-        // friendPhone: extractDomain(),
         friend_id: 0,
         url: "https://connect.brisebox.com/accept" + window.location.search
       }).then(function (response) {
@@ -2317,16 +2309,7 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         console.log(error);
       });
-    } // extractDomain () {
-    //     getUrl = window.location.search.slice(1); 
-    //     getUrl = getUrl.replace(/=/g, '": "');
-    //     getUrl = getUrl.replace(/&/g, '", "');
-    //     getUrl = '{"'+getUrl+'"}';
-    //     var obj = JSON.parse(getUrl);
-    //     console.log('ISSA DOMAIN WITH VALUE:', obj.origin);
-    //     return obj.origin;
-    // } 
-
+    }
   }
 });
 
@@ -48281,7 +48264,7 @@ var render = function() {
           _vm._s(
             _vm.contact
               ? _vm.contact.name
-              : "Refresh page, or a select contact on the right."
+              : "** Refresh page, or a select contact on the right **"
           )
         )
       ]),

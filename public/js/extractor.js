@@ -12,7 +12,7 @@
     return obj.incUrl;
   }
 
-  // domain 
+  // support email 
   function extractDomain () {
     getUrl = window.location.search.slice(1); 
     getUrl = getUrl.replace(/=/g, '": "');
