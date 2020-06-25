@@ -8,22 +8,21 @@
             <div class="content">
 
                 <div class="company-brand">
-                <p id="uppercase-brand"></p>
-                <script>
-                    const companyBrand = extractCompanyName().toUpperCase();
-                    document.getElementById("uppercase-brand").innerHTML = companyBrand;
-                </script>
+                    <p id="uppercase-brand"></p>
+                    <script>
+                        const companyBrand = extractCompanyName().toUpperCase();
+                        document.getElementById("uppercase-brand").innerHTML = companyBrand;
+                    </script>
                 </div>
                 
                 <p>Store: </p> <p id="lowercase-email"></p>
                 <script>
                     const supportEmail = extractDomain().toLowerCase();
-                    document.getElementById("uppercase-brand").innerHTML = supportEmail;
+                    document.getElementById("lowercase-email").innerHTML = supportEmail;
                 </script>
-                </div>
 
                 {{-- <h4> Shop live with someone in <div id="lowercase-brand"></div> </h4>  --}}
-                <h4> Live Chat with a Store Member <div id="lowercase-brand"></div> </h4>
+                <h5> Invite and live chat with a <div id="lowercase-brand"></div> store member below. </h5>
                 <script>
                     const companyname = extractCompanyName().toLowerCase();
                     document.getElementById("lowercase-brand").innerHTML = companyname;

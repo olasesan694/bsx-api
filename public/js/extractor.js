@@ -19,7 +19,6 @@
     getUrl = getUrl.replace(/&/g, '", "');
     getUrl = '{"'+getUrl+'"}';
     var obj = JSON.parse(getUrl);
-    console.log('ISSA DOMAIN WITH VALUE:', obj.origin);
     return obj.origin;
   }
 
