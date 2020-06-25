@@ -32,7 +32,7 @@
                 <p id="price"></p>
                 <script>extractProductPrice();</script>
 
-                {{ $user = auth()->user(); }}
+                {{ $user = auth()->user() }}
                 <invite-form user={{ $user->email }}></invite-form>
 
             </div>
