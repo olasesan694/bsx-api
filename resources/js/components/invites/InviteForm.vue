@@ -55,15 +55,15 @@
                     console.log(error); 
                 });
             },
-            extractDomain () {
-                getUrl = window.location.search.slice(1); 
-                getUrl = getUrl.replace(/=/g, '": "');
-                getUrl = getUrl.replace(/&/g, '", "');
-                getUrl = '{"'+getUrl+'"}';
-                var obj = JSON.parse(getUrl);
-                console.log('ISSA DOMAIN WITH VALUE:', obj.origin);
-                return obj.origin;
-            } 
+            // extractDomain () {
+            //     getUrl = window.location.search.slice(1); 
+            //     getUrl = getUrl.replace(/=/g, '": "');
+            //     getUrl = getUrl.replace(/&/g, '", "');
+            //     getUrl = '{"'+getUrl+'"}';
+            //     var obj = JSON.parse(getUrl);
+            //     console.log('ISSA DOMAIN WITH VALUE:', obj.origin);
+            //     return obj.origin;
+            // } 
         }
     }
 </script>

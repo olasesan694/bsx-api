@@ -2317,16 +2317,16 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         console.log(error);
       });
-    },
-    extractDomain: function extractDomain() {
-      getUrl = window.location.search.slice(1);
-      getUrl = getUrl.replace(/=/g, '": "');
-      getUrl = getUrl.replace(/&/g, '", "');
-      getUrl = '{"' + getUrl + '"}';
-      var obj = JSON.parse(getUrl);
-      console.log('ISSA DOMAIN WITH VALUE:', obj.origin);
-      return obj.origin;
-    }
+    } // extractDomain () {
+    //     getUrl = window.location.search.slice(1); 
+    //     getUrl = getUrl.replace(/=/g, '": "');
+    //     getUrl = getUrl.replace(/&/g, '", "');
+    //     getUrl = '{"'+getUrl+'"}';
+    //     var obj = JSON.parse(getUrl);
+    //     console.log('ISSA DOMAIN WITH VALUE:', obj.origin);
+    //     return obj.origin;
+    // } 
+
   }
 });
 
