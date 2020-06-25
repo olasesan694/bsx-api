@@ -1,6 +1,6 @@
 <template>
     <div class="conversation">
-        <h1>{{ contact ? contact.name : '** Refresh page, or a select contact on the right **' }}</h1>
+        <h1>{{ contact ? contact.name : '** Refresh page when member joins, or a select contact **' }}</h1>
         <MessagesFeed :contact="contact" :messages="messages"/>
         <MessageComposer @send="sendMessage"/>
     </div>

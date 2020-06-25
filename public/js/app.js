@@ -48264,7 +48264,7 @@ var render = function() {
           _vm._s(
             _vm.contact
               ? _vm.contact.name
-              : "** Refresh page, or a select contact on the right **"
+              : "** Refresh page when member joins, or a select contact **"
           )
         )
       ]),

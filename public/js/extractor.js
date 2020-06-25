@@ -14,7 +14,7 @@
 
   // support email 
   function extractDomain () {
-    getUrl = window.location.search.slice(1); 
+    getUrl = companyUrlInfo(); 
     getUrl = getUrl.replace(/=/g, '": "');
     getUrl = getUrl.replace(/&/g, '", "');
     getUrl = '{"'+getUrl+'"}';
