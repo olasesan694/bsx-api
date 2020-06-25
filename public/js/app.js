@@ -2290,16 +2290,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
-    getUrl = window.location.search.slice(1);
-    getUrl = getUrl.replace(/=/g, '": "');
-    getUrl = getUrl.replace(/&/g, '", "');
-    getUrl = '{"' + getUrl + '"}';
-    var obj = JSON.parse(getUrl);
-    domain = obj.origin;
-    console.log('ISSA DOMAIN WITH VALUE:', domain);
     return {
       friendPhone: '',
-      placeholderValue: domain // placeholderValue: window.location.origin
+      placeholderValue: extractDomain() // placeholderValue: window.location.origin
 
     };
   },
@@ -2311,7 +2304,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.post('/invite/send', {
         // friendPhone: this.friendPhone,
         // friendPhone: window.location.origin,
-        friendPhone: domain,
+        friendPhone: extractDomain(),
         friend_id: 0,
         url: "https://connect.brisebox.com/accept" + window.location.search
       }).then(function (response) {

@@ -27,17 +27,9 @@
         
         data() { 
 
-            getUrl = window.location.search.slice(1); 
-            getUrl = getUrl.replace(/=/g, '": "');
-            getUrl = getUrl.replace(/&/g, '", "');
-            getUrl = '{"'+getUrl+'"}';
-            var obj = JSON.parse(getUrl);
-            domain = obj.origin;
-            console.log('ISSA DOMAIN WITH VALUE:', domain);
-
             return { 
                 friendPhone: '',
-                placeholderValue: domain,
+                placeholderValue: extractDomain(),
                 // placeholderValue: window.location.origin
             }
         },
@@ -49,7 +41,7 @@
                 axios.post('/invite/send', {
                     // friendPhone: this.friendPhone,
                     // friendPhone: window.location.origin,
-                    friendPhone: domain,
+                    friendPhone: extractDomain(),
                     friend_id: 0,
                     url: "https://connect.brisebox.com/accept" + window.location.search
                 })
