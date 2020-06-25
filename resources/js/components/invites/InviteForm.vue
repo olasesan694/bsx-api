@@ -10,7 +10,7 @@
                         <!-- <label for="friendPhone" class="friendPhone">Invite Store Employee: &nbsp;&nbsp;&nbsp;&nbsp; +1</label> -->
                         <label for="friendPhone" class="friendPhone">Store: &nbsp;&nbsp;&nbsp;&nbsp; </label> 
                         <!-- <input type="text" name="friendPhone" v-model="friendPhone" placeholder="3335557777" class="form-control"> -->
-                        <input type="text" name="friendPhone" v-model="friendPhone" :placeholder="[[ placeholderValue ]]" class="form-control" disabled> 
+                        <input type="text" name="friendPhone" v-model="friendPhone" @value="extractDomain" @placeholder="extractDomain" class="form-control" disabled> 
                     </div>
                     
                     <div class="form-group">
@@ -29,7 +29,7 @@
 
             return { 
                 friendPhone: '',
-                placeholderValue: extractDomain(),
+                // placeholderValue: extractDomain(),
                 // placeholderValue: window.location.origin
             }
         },
@@ -39,9 +39,9 @@
         methods: {
             addFriend() { // post a request to the url we want
                 axios.post('/invite/send', {
-                    // friendPhone: this.friendPhone,
+                    friendPhone: this.friendPhone,
                     // friendPhone: window.location.origin,
-                    friendPhone: extractDomain(),
+                    // friendPhone: extractDomain(),
                     friend_id: 0,
                     url: "https://connect.brisebox.com/accept" + window.location.search
                 })
@@ -51,7 +51,16 @@
                 .catch(function (error) {
                     console.log(error); 
                 });
-            }
+            },
+            extractDomain () {
+                getUrl = window.location.search.slice(1); 
+                getUrl = getUrl.replace(/=/g, '": "');
+                getUrl = getUrl.replace(/&/g, '", "');
+                getUrl = '{"'+getUrl+'"}';
+                var obj = JSON.parse(getUrl);
+                console.log('ISSA DOMAIN WITH VALUE:', obj.origin);
+                return obj.origin;
+            } 
         }
     }
 </script>

@@ -2291,8 +2291,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      friendPhone: '',
-      placeholderValue: extractDomain() // placeholderValue: window.location.origin
+      friendPhone: '' // placeholderValue: extractDomain(),
+      // placeholderValue: window.location.origin
 
     };
   },
@@ -2302,9 +2302,9 @@ __webpack_require__.r(__webpack_exports__);
     addFriend: function addFriend() {
       // post a request to the url we want
       axios.post('/invite/send', {
-        // friendPhone: this.friendPhone,
+        friendPhone: this.friendPhone,
         // friendPhone: window.location.origin,
-        friendPhone: extractDomain(),
+        // friendPhone: extractDomain(),
         friend_id: 0,
         url: "https://connect.brisebox.com/accept" + window.location.search
       }).then(function (response) {
@@ -2312,6 +2312,15 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         console.log(error);
       });
+    },
+    extractDomain: function extractDomain() {
+      getUrl = window.location.search.slice(1);
+      getUrl = getUrl.replace(/=/g, '": "');
+      getUrl = getUrl.replace(/&/g, '", "');
+      getUrl = '{"' + getUrl + '"}';
+      var obj = JSON.parse(getUrl);
+      console.log('ISSA DOMAIN WITH VALUE:', obj.origin);
+      return obj.origin;
     }
   }
 });
@@ -48505,14 +48514,11 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
-                attrs: {
-                  type: "text",
-                  name: "friendPhone",
-                  placeholder: [[_vm.placeholderValue]],
-                  disabled: ""
-                },
+                attrs: { type: "text", name: "friendPhone", disabled: "" },
                 domProps: { value: _vm.friendPhone },
                 on: {
+                  value: _vm.extractDomain,
+                  placeholder: _vm.extractDomain,
                   input: function($event) {
                     if ($event.target.composing) {
                       return
