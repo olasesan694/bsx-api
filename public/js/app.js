@@ -2304,6 +2304,8 @@ __webpack_require__.r(__webpack_exports__);
     addFriend: function addFriend() {
       // post a request to the url we want
       // var user = JSON.parse(this.user) // company's email
+      var user = this.user; // company's email
+
       axios.post('/invite/send', {
         // friendPhone: this.friendPhone,
         friendPhone: user,
