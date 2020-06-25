@@ -2289,9 +2289,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['user'],
   data: function data() {
     return {
-      friendPhone: '' // placeholderValue: extractDomain(),
+      friendPhone: '',
+      user: '' // placeholderValue: extractDomain(),
       // placeholderValue: window.location.origin
 
     };
@@ -2301,8 +2303,11 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     addFriend: function addFriend() {
       // post a request to the url we want
+      var user = JSON.parse(this.user); // company's email
+
       axios.post('/invite/send', {
-        friendPhone: this.friendPhone,
+        // friendPhone: this.friendPhone,
+        friendPhone: user,
         // friendPhone: window.location.origin,
         // friendPhone: extractDomain(),
         friend_id: 0,
@@ -48514,15 +48519,14 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { type: "text", name: "friendPhone", disabled: "" },
+                attrs: {
+                  type: "text",
+                  name: "friendPhone",
+                  placeholder: "********",
+                  disabled: ""
+                },
                 domProps: { value: _vm.friendPhone },
                 on: {
-                  value: function($event) {
-                    return _vm.extractDomain()
-                  },
-                  placeholder: function($event) {
-                    return _vm.extractDomain()
-                  },
                   input: function($event) {
                     if ($event.target.composing) {
                       return

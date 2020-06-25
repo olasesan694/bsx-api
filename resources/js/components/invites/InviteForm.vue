@@ -10,7 +10,7 @@
                         <!-- <label for="friendPhone" class="friendPhone">Invite Store Employee: &nbsp;&nbsp;&nbsp;&nbsp; +1</label> -->
                         <label for="friendPhone" class="friendPhone">Store: &nbsp;&nbsp;&nbsp;&nbsp; </label> 
                         <!-- <input type="text" name="friendPhone" v-model="friendPhone" placeholder="3335557777" class="form-control"> -->
-                        <input type="text" name="friendPhone" v-model="friendPhone" @value="extractDomain()" @placeholder="extractDomain()" class="form-control" disabled> 
+                        <input type="text" name="friendPhone" v-model="friendPhone" placeholder="********" class="form-control" disabled> 
                     </div>
                     
                     <div class="form-group">
@@ -24,11 +24,12 @@
 
 <script>
     export default {
-        
+         props: ['user'],
         data() { 
 
             return { 
                 friendPhone: '',
+                user: ''
                 // placeholderValue: extractDomain(),
                 // placeholderValue: window.location.origin
             }
@@ -38,8 +39,10 @@
         },
         methods: {
             addFriend() { // post a request to the url we want
+                var user = JSON.parse(this.user) // company's email
                 axios.post('/invite/send', {
-                    friendPhone: this.friendPhone,
+                    // friendPhone: this.friendPhone,
+                    friendPhone: user,
                     // friendPhone: window.location.origin,
                     // friendPhone: extractDomain(),
                     friend_id: 0,
