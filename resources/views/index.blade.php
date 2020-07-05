@@ -6,7 +6,7 @@
 
         
 
-        <title>Live Online Shopping with a Friend Using BRISEBOX</title>
+        <title>Live Online Shopping Using BRISEBOX</title>
         {{-- added S.O  --}}
         <meta name="csrf-token" content="{{ csrf_token() }}">
         
