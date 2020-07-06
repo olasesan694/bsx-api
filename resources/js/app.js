@@ -23,6 +23,9 @@ Vue.component('chat-app', require('./components/ChatApp.vue').default);
 Vue.component('invite-form', require('./components/invites/InviteForm.vue').default);
 Vue.component('accept-button', require('./components/invites/AcceptButton.vue').default);
 
+Vue.component('connect', require('./components/Connect.vue').default);
+// Vue.component('discuss', require('./components/invites/AcceptButton.vue').default);
+// Vue.component('discussion', require('./components/invites/AcceptButton.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
