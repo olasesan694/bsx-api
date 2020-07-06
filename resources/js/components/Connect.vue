@@ -1,25 +1,15 @@
 <template>
-    <div class="container">
-      <div class="content">
-
-        <div class="company-brand">
-          <p id="uppercase-brand" v-html="storeID"></p>
+    <div class="content">
+        <div >
+            <p id="uppercase-brand" v-html="storeID"></p>
         </div>
-
         <h4> Live Chat with Store Member <div id="lowercase-brand" v-html="companyName"></div> </h4> 
-
-        <br>
-        <p><img id="image" v-bind:src="productImage" class="feature-img" alt="" style="width:50%;"></p> 
-
+        <p><img id="image" v-bind:src="productImage"></p> 
         <p id="title" v-html="productTitle"></p>
-
         <p id="price" v-html="productPrice"></p>
-
-        <div style="width:45%;height:50%">
-          <button type="submit" name="startbutton" v-bind:onclick="getStarted" class="btn btn-primary"> Get Started </button>
+        <div>
+            <button type="submit" name="startbutton" v-bind:onclick="getStarted" class="btn btn-primary"> Get Started </button>
         </div>
-
-      </div>
     </div>
 </template>
 
