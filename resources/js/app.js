@@ -33,47 +33,9 @@ Vue.component('connect-view', require('./components/ConnectView.vue').default);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-// const app = new Vue({
-//     el: '#app',
-// });
-
-new Vue ({
+const app = new Vue({
     el: '#app',
-    data: { 
-        // default / base values
-    },
-    methods: {
-        url_info: function () {
-            var customerURL =  window.location.search.slice(1);  
-            getUrl = decodeURIComponent(customerURL);
-            getUrl = getUrl.replace(/=/g, '": "');
-            getUrl = getUrl.replace(/&/g, '", "');
-            getUrl = '{"'+getUrl+'"}';
-            var obj = JSON.parse(getUrl);
-            return obj;
-        },
-        storeID: function () {
-            return url_info().origin;
-        },
-        companyName: function () {
-            return url_info().incName.toUpperCase();
-        },
-        productImage: function () {
-            return url_info().prodImage;
-        },
-        productTitle: function () {
-            return url_info().prodTitle;
-        },
-        productPrice: function () {
-            return url_info().prodPrice;
-        },
-        getStarted: function () {
-            var invitation = "https://connect.brisebox.com/invite"; 
-            var url_details = window.location.search;
-            var invitation_url = invitation + url_details;
-            window.location.href = invitation_url;
-            return window.location.href;
-        }
-    }
 });
+
+
 
