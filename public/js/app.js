@@ -2007,7 +2007,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 new Vue({
   el: '#vue-app',
-  data: {},
+  data: {// default / base values
+  },
   methods: {
     url_info: function url_info() {
       var customerURL = window.location.search.slice(1);
@@ -48262,43 +48263,36 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "content" }, [
-    _c("div", [
-      _c("p", {
-        attrs: { id: "uppercase-brand" },
-        domProps: { innerHTML: _vm._s(_vm.storeID) }
-      })
+    _c("div", { staticClass: "company-brand" }, [
+      _c("p", { attrs: { id: "uppercase-brand" } }, [
+        _vm._v(" " + _vm._s(_vm.storeID()) + " ")
+      ])
     ]),
     _vm._v(" "),
     _c("h4", [
       _vm._v(" Live Chat with Store Member "),
-      _c("div", {
-        attrs: { id: "lowercase-brand" },
-        domProps: { innerHTML: _vm._s(_vm.companyName) }
-      })
+      _c("div", { attrs: { id: "lowercase-brand" } }, [
+        _vm._v(" " + _vm._s(_vm.companyName()) + " ")
+      ])
     ]),
     _vm._v(" "),
     _c("p", [_c("img", { attrs: { id: "image", src: _vm.productImage } })]),
     _vm._v(" "),
-    _c("p", {
-      attrs: { id: "title" },
-      domProps: { innerHTML: _vm._s(_vm.productTitle) }
-    }),
+    _c("p", { attrs: { id: "title" } }, [
+      _vm._v(" " + _vm._s(_vm.productTitle()) + " ")
+    ]),
     _vm._v(" "),
-    _c("p", {
-      attrs: { id: "price" },
-      domProps: { innerHTML: _vm._s(_vm.productPrice) }
-    }),
+    _c("p", { attrs: { id: "price" } }, [
+      _vm._v(" " + _vm._s(_vm.productPrice()) + " ")
+    ]),
     _vm._v(" "),
     _c("div", [
       _c(
         "button",
         {
           staticClass: "btn btn-primary",
-          attrs: {
-            type: "submit",
-            name: "startbutton",
-            onclick: _vm.getStarted
-          }
+          attrs: { type: "submit", name: "startbutton" },
+          on: { onclick: _vm.getStarted }
         },
         [_vm._v(" Get Started ")]
       )
