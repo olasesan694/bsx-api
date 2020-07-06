@@ -18,30 +18,36 @@
 <script>
     export default {
         methods: {
-            url_info: function () {
+            // url_info: function () {
+            //     var customerURL =  window.location.search.slice(1);  
+            //     getUrl = decodeURIComponent(customerURL);
+            //     getUrl = getUrl.replace(/=/g, '": "');
+            //     getUrl = getUrl.replace(/&/g, '", "');
+            //     getUrl = '{"'+getUrl+'"}';
+            //     var obj = JSON.parse(getUrl);
+            //     return obj;
+            // },
+            storeId: function () {
                 var customerURL =  window.location.search.slice(1);  
                 getUrl = decodeURIComponent(customerURL);
                 getUrl = getUrl.replace(/=/g, '": "');
                 getUrl = getUrl.replace(/&/g, '", "');
                 getUrl = '{"'+getUrl+'"}';
                 var obj = JSON.parse(getUrl);
-                return obj;
+                return obj.origin;
             },
-            storeId: function () {
-                return url_info().origin;
-            },
-            companyName: function () {
-                return url_info().incName.toUpperCase();
-            },
-            productImage: function () {
-                return url_info().prodImage;
-            },
-            productTitle: function () {
-                return url_info().prodTitle;
-            },
-            productPrice: function () {
-                return url_info().prodPrice;
-            },
+            // companyName: function () {
+            //     return url_info().incName.toUpperCase();
+            // },
+            // productImage: function () {
+            //     return url_info().prodImage;
+            // },
+            // productTitle: function () {
+            //     return url_info().prodTitle;
+            // },
+            // productPrice: function () {
+            //     return url_info().prodPrice;
+            // },
             getStarted: function () {
                 var invitation = "https://connect.brisebox.com/invite"; 
                 var url_details = window.location.search;

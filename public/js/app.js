@@ -2011,30 +2011,36 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   methods: {
-    url_info: function url_info() {
+    // url_info: function () {
+    //     var customerURL =  window.location.search.slice(1);  
+    //     getUrl = decodeURIComponent(customerURL);
+    //     getUrl = getUrl.replace(/=/g, '": "');
+    //     getUrl = getUrl.replace(/&/g, '", "');
+    //     getUrl = '{"'+getUrl+'"}';
+    //     var obj = JSON.parse(getUrl);
+    //     return obj;
+    // },
+    storeId: function storeId() {
       var customerURL = window.location.search.slice(1);
       getUrl = decodeURIComponent(customerURL);
       getUrl = getUrl.replace(/=/g, '": "');
       getUrl = getUrl.replace(/&/g, '", "');
       getUrl = '{"' + getUrl + '"}';
       var obj = JSON.parse(getUrl);
-      return obj;
+      return obj.origin;
     },
-    storeId: function storeId() {
-      return url_info().origin;
-    },
-    companyName: function companyName() {
-      return url_info().incName.toUpperCase();
-    },
-    productImage: function productImage() {
-      return url_info().prodImage;
-    },
-    productTitle: function productTitle() {
-      return url_info().prodTitle;
-    },
-    productPrice: function productPrice() {
-      return url_info().prodPrice;
-    },
+    // companyName: function () {
+    //     return url_info().incName.toUpperCase();
+    // },
+    // productImage: function () {
+    //     return url_info().prodImage;
+    // },
+    // productTitle: function () {
+    //     return url_info().prodTitle;
+    // },
+    // productPrice: function () {
+    //     return url_info().prodPrice;
+    // },
     getStarted: function getStarted() {
       var invitation = "https://connect.brisebox.com/invite";
       var url_details = window.location.search;
