@@ -5,14 +5,12 @@
     {{-- <script src="{{ asset('js/begin.js') }}"></script>
     <script src="{{ asset('js/extractor.js') }}"></script> --}}
     
-    <script src="https://unpkg.com/vue"></script>
     
 
-
-    <div id="vue-app" class="container">
+    <div id="app" class="container">
       <div class="content">
         <div class="company-brand">
-            {{-- <p id="uppercase-brand"> {{ storeID() }} </p> --}}
+            <p id="uppercase-brand"> {{ storeID() }} </p>
         </div>
         <h4> Live Chat with Store Member <div id="lowercase-brand"> {{ companyName() }} </div> </h4> 
         <p><img id="image" v-bind:src="productImage"></p> 
@@ -21,7 +19,7 @@
         <div>
             <button type="submit" name="startbutton" v-on:onclick="getStarted" class="btn btn-primary"> Get Started </button>
         </div>
-      </div>
+    </div>
     </div>
 
     <script src="{{ asset('js/app.js') }}"></script>
