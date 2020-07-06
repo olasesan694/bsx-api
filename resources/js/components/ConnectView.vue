@@ -1,7 +1,7 @@
 <template>
     <div class="content">
         <div class="company-brand">
-            <p id="uppercase-brand"> {{storeID() }} </p>
+            <p id="uppercase-brand"> {{ storeID() }} </p>
         </div>
         <h4> Live Chat with Store Member <div id="lowercase-brand"> {{ companyName() }} </div> </h4> 
         <p><img id="image" v-bind:src="productImage"></p> 
@@ -14,9 +14,16 @@
 </template>
 
 <script>
-    new Vue ({
-        el: '#vue-app',
-        data: { 
+    // new Vue ({
+    //     el: '#vue-app',
+    //     data: { 
+    //         // default / base values
+    //     },
+    export default {
+        props: {
+
+        },
+        data() {
             // default / base values
         },
         methods: {
@@ -52,5 +59,5 @@
                 return window.location.href;
             }
         }
-    })
+    }
 </script>
