@@ -2030,7 +2030,7 @@ new Vue({
       var obj = JSON.parse(getUrl);
       return obj;
     },
-    storeID: function storeID() {
+    storeId: function storeId() {
       return url_info().origin;
     },
     companyName: function companyName() {
@@ -48276,7 +48276,7 @@ var render = function() {
   return _c("div", { staticClass: "content" }, [
     _c("div", { staticClass: "company-brand" }, [
       _c("p", { attrs: { id: "uppercase-brand" } }, [
-        _vm._v(" " + _vm._s(_vm.store) + " ")
+        _vm._v(" " + _vm._s(_vm.storeId()) + " 5 ")
       ])
     ]),
     _vm._v(" "),

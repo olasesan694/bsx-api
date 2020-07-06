@@ -1,7 +1,7 @@
 <template>
     <div class="content">
         <div class="company-brand">
-            <p id="uppercase-brand"> {{ store }} </p>
+            <p id="uppercase-brand"> {{ storeId() }} 5 </p>
         </div>
         <h4> Live Chat with Store Member <div id="lowercase-brand"> {{ companyName() }} </div> </h4> 
         <p><img id="image" v-bind:src="productImage"></p> 
@@ -40,7 +40,7 @@
                 var obj = JSON.parse(getUrl);
                 return obj;
             },
-            storeID: function () {
+            storeId: function () {
                 return url_info().origin;
             },
             companyName: function () {
