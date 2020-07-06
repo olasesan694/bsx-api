@@ -2010,6 +2010,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
+  // data() {
+  //     return {
+  //         selected: this.contacts.length ? this.contacts[0] : null
+  //     };
+  // },
   methods: {
     // url_info: function () {
     //     var customerURL =  window.location.search.slice(1);  
@@ -2022,7 +2027,7 @@ __webpack_require__.r(__webpack_exports__);
     // },
     storeId: function storeId() {
       var customerURL = window.location.search.slice(1);
-      getUrl = decodeURIComponent(customerURL);
+      var getUrl = decodeURIComponent(customerURL);
       getUrl = getUrl.replace(/=/g, '": "');
       getUrl = getUrl.replace(/&/g, '", "');
       getUrl = '{"' + getUrl + '"}';

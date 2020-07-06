@@ -17,6 +17,11 @@
 
 <script>
     export default {
+        // data() {
+        //     return {
+        //         selected: this.contacts.length ? this.contacts[0] : null
+        //     };
+        // },
         methods: {
             // url_info: function () {
             //     var customerURL =  window.location.search.slice(1);  
@@ -29,7 +34,7 @@
             // },
             storeId: function () {
                 var customerURL =  window.location.search.slice(1);  
-                getUrl = decodeURIComponent(customerURL);
+                var getUrl = decodeURIComponent(customerURL);
                 getUrl = getUrl.replace(/=/g, '": "');
                 getUrl = getUrl.replace(/&/g, '", "');
                 getUrl = '{"'+getUrl+'"}';
