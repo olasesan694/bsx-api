@@ -12,7 +12,7 @@
     <div id="vue-app" class="container">
       <div class="content">
         <div class="company-brand">
-            <p id="uppercase-brand"> {{ storeID() }} </p>
+            {{-- <p id="uppercase-brand"> {{ storeID() }} </p> --}}
         </div>
         <h4> Live Chat with Store Member <div id="lowercase-brand"> {{ companyName() }} </div> </h4> 
         <p><img id="image" v-bind:src="productImage"></p> 
