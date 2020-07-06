@@ -1,35 +1,22 @@
 <template>
-    <div class="content">
-        <div class="company-brand">
-            <p id="uppercase-brand"> {{ storeId() }} 5 </p>
-        </div>
-        <h4> Live Chat with Store Member <div id="lowercase-brand"> {{ companyName() }} </div> </h4> 
-        <p><img id="image" v-bind:src="productImage"></p> 
-        <p id="title"> {{ productTitle() }} </p>
-        <p id="price"> {{ productPrice() }} </p>
-        <div>
-            <button type="submit" name="startbutton" v-on:onclick="getStarted" class="btn btn-primary"> Get Started </button>
+    <div id="app" class="container">
+        <div class="content">
+            <div class="company-brand">
+                <p id="uppercase-brand"> {{ storeId() }} </p>
+            </div>
+            <h4> Live Chat with Store Member <div id="lowercase-brand"> {{ companyName() }} </div> </h4> 
+            <p><img id="image" v-bind:src="productImage"></p> 
+            <p id="title"> {{ productTitle() }} </p>
+            <p id="price"> {{ productPrice() }} </p>
+            <div>
+                <button type="submit" name="startbutton" v-on:onclick="getStarted" class="btn btn-primary"> Get Started </button>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
-    new Vue ({
-        el: '#vue-app',
-        data: { 
-            // default / base values
-            store: "hi"
-        },
-    // export default {
-    //     props: {
-
-    //     },
-    //     data() {
-    //         // default / base values
-    //         return {
-    //             store: 23
-    //         };
-    //     },
+    export default {
         methods: {
             url_info: function () {
                 var customerURL =  window.location.search.slice(1);  
@@ -63,5 +50,9 @@
                 return window.location.href;
             }
         }
-    });
+    }
 </script>
+
+<style scoped>
+
+</style>
