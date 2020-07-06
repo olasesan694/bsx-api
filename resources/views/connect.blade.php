@@ -5,7 +5,8 @@
     {{-- <script src="{{ asset('js/begin.js') }}"></script>
     <script src="{{ asset('js/extractor.js') }}"></script> --}}
     
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://unpkg.com/vue"></script>
+    
 
 
     <div id="vue-app" class="container">
@@ -22,6 +23,8 @@
         </div>
       </div>
     </div>
+
+    <script src="{{ asset('js/app.js') }}"></script>
 
     
 

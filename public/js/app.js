@@ -60739,12 +60739,12 @@ Vue.component('connect-view', __webpack_require__(/*! ./components/ConnectView.v
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+// const app = new Vue({
+//     el: '#app',
+// });
 
-var app = new Vue({
-  el: '#app'
-});
 new Vue({
-  el: '#vue-app',
+  el: '#app',
   data: {// default / base values
   },
   methods: {

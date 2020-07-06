@@ -33,12 +33,12 @@ Vue.component('connect-view', require('./components/ConnectView.vue').default);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app',
-});
+// const app = new Vue({
+//     el: '#app',
+// });
 
 new Vue ({
-    el: '#vue-app',
+    el: '#app',
     data: { 
         // default / base values
     },
