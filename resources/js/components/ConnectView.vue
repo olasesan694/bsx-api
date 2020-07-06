@@ -14,21 +14,22 @@
 </template>
 
 <script>
-    // new Vue ({
-    //     el: '#vue-app',
-    //     data: { 
-    //         // default / base values
-    //     },
-    export default {
-        props: {
-
-        },
-        data() {
+    new Vue ({
+        el: '#vue-app',
+        data: { 
             // default / base values
-            return {
-                store: 23
-            };
+            store: "hi"
         },
+    // export default {
+    //     props: {
+
+    //     },
+    //     data() {
+    //         // default / base values
+    //         return {
+    //             store: 23
+    //         };
+    //     },
         methods: {
             url_info: function () {
                 var customerURL =  window.location.search.slice(1);  
@@ -62,5 +63,5 @@
                 return window.location.href;
             }
         }
-    }
+    });
 </script>

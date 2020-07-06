@@ -5,7 +5,7 @@
     {{-- <script src="{{ asset('js/begin.js') }}"></script>
     <script src="{{ asset('js/extractor.js') }}"></script> --}}
     
-    <div id="app" class="container">
+    <div id="vue-app" class="container">
       <connect-view></connect-view>
     </div>
 
