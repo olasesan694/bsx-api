@@ -16,12 +16,8 @@
 </template>
 
 <script>
+
     export default {
-        // data() {
-        //     return {
-        //         selected: this.contacts.length ? this.contacts[0] : null
-        //     };
-        // },
         methods: {
             // url_info: function () {
             //     var customerURL =  window.location.search.slice(1);  
@@ -33,13 +29,14 @@
             //     return obj;
             // },
             storeId: function () {
-                var customerURL =  window.location.search.slice(1);  
-                var getUrl = decodeURIComponent(customerURL);
-                getUrl = getUrl.replace(/=/g, '": "');
-                getUrl = getUrl.replace(/&/g, '", "');
-                getUrl = '{"'+getUrl+'"}';
-                var obj = JSON.parse(getUrl);
-                return obj.origin;
+                // var customerURL =  window.location.search.slice(1);  
+                // var getUrl = decodeURIComponent(customerURL);
+                // getUrl = getUrl.replace(/=/g, '": "');
+                // getUrl = getUrl.replace(/&/g, '", "');
+                // getUrl = '{"'+getUrl+'"}';
+                // var obj = JSON.parse(getUrl);
+                // return obj.origin;
+                return 13;
             },
             // companyName: function () {
             //     return url_info().incName.toUpperCase();
