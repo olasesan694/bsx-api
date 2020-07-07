@@ -48278,23 +48278,6 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("h4", [
-        _vm._v(" Live Chat with Store Member "),
-        _c("div", { attrs: { id: "lowercase-brand" } }, [
-          _vm._v(" " + _vm._s(_vm.companyName()) + " ")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("p", [_c("img", { attrs: { id: "image", src: _vm.productImage } })]),
-      _vm._v(" "),
-      _c("p", { attrs: { id: "title" } }, [
-        _vm._v(" " + _vm._s(_vm.productTitle()) + " ")
-      ]),
-      _vm._v(" "),
-      _c("p", { attrs: { id: "price" } }, [
-        _vm._v(" " + _vm._s(_vm.productPrice()) + " ")
-      ]),
-      _vm._v(" "),
       _c("div", [
         _c(
           "button",

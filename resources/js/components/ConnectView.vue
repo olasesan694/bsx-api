@@ -4,10 +4,10 @@
             <div class="company-brand">
                 <p id="uppercase-brand"> {{ storeId() }} </p>
             </div>
-            <h4> Live Chat with Store Member <div id="lowercase-brand"> {{ companyName() }} </div> </h4> 
+            <!-- <h4> Live Chat with Store Member <div id="lowercase-brand"> {{ companyName() }} </div> </h4> 
             <p><img id="image" v-bind:src="productImage"></p> 
             <p id="title"> {{ productTitle() }} </p>
-            <p id="price"> {{ productPrice() }} </p>
+            <p id="price"> {{ productPrice() }} </p> -->
             <div>
                 <button type="submit" name="startbutton" v-on:onclick="getStarted" class="btn btn-primary"> Get Started </button>
             </div>
