@@ -17,7 +17,7 @@
 
 <script>
 
-    import Lottie from './../../node_modules/lottie-web/build/player/lottie';
+    // import Lottie from './../../node_modules/lottie-web/build/player/lottie';
 
     export default {
         // data() {
