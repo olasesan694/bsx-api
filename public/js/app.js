@@ -2011,14 +2011,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 // import Lottie from './../../node_modules/lottie-web/build/player/lottie';
 /* harmony default export */ __webpack_exports__["default"] = ({
-  // data() {
-  //     return {
-  //         // myJson: json
-  //         info: {
-  //             origin: null
-  //         }
-  //     }
-  // },
+  data: function data() {
+    return {
+      info: null // info: {
+      //     origin: null
+      // }
+
+    };
+  },
   methods: {
     // url_info: function () {
     //     var customerURL =  window.location.search.slice(1);  
@@ -2048,10 +2048,11 @@ __webpack_require__.r(__webpack_exports__);
       // })
       // var obj = json(getUrl);
 
-      var obj2 = json_encode(getUrl);
+      this.info = getUrl;
+      var obj2 = json_encode(this.info);
       console.log(" FINAL JSON FORMAT: ", obj2);
       console.log("THE FINAL VALUE: ", obj2.orgin);
-      return "using json encode: " + obj2.orgin;
+      return obj2.orgin;
     },
     // companyName: function () {
     //     return url_info().incName.toUpperCase();
