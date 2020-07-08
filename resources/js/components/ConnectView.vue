@@ -48,18 +48,19 @@
                 getUrl = getUrl.replace(/&/g, '", "');
                 console.log('THE OTHER REPLACED VALUE: ', getUrl);
                 getUrl = '{"'+getUrl+'"}';
-                console.log("JSON FORMAT IS : ", getUrl);
-                console.log("THE FINAL VALUE : ", json(getUrl));
-                console.log("THE FINAL VALUE : ", json_encode(getUrl));
+                console.log("CUSTOM FORMAT IS : ", getUrl);
+                // console.log("THE FINAL VALUE : ", json(getUrl));
                 // var obj = JSON.parse(getUrl); JSON.parse(JSON.stringify(data.Nodes)); 
                 // this.jsonVal = JSON.parse(getUrl);
                 // this.axios.post("https://localhost:3000/info/", this.info['origin'])
                 // .then((result) =>{
                 //     console.warn(result);
                 // })
-                var obj = json(getUrl);
+                // var obj = json(getUrl);
                 var obj2 = json_encode(getUrl);
-                return "using json: " + obj.orgin + "using json_encode: " + obj2;
+                console.log(" FINAL JSON FORMAT: ", obj2);
+                console.log("THE FINAL VALUE: ", obj2.orgin);
+                return "using json encode: " + obj2.orgin ;
             },
             // companyName: function () {
             //     return url_info().incName.toUpperCase();
