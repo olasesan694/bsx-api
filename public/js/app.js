@@ -2033,9 +2033,9 @@ __webpack_require__.r(__webpack_exports__);
       getUrl = getUrl.replace(/&/g, '", "');
       getUrl = '{"' + getUrl + '"}';
       console.log("THE JSON FORMAT IS : ", getUrl);
-      console.log("THE IS THE VALUE : ", getUrl.origin); // var obj = JSON.parse(getUrl);
+      console.log("THE IS THE VALUE : ", getUrl['origin']); // var obj = JSON.parse(getUrl);
 
-      return getUrl.origin;
+      return getUrl['origin'];
     },
     // companyName: function () {
     //     return url_info().incName.toUpperCase();
