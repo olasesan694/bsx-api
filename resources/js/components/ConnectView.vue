@@ -58,7 +58,7 @@
                 // })
                 // var obj = json(getUrl);
                 this.info = getUrl;
-                var obj2 = json_encode(this.info);
+                var obj2 = JSON.parse(this.info);
                 console.log(" FINAL JSON FORMAT: ", obj2);
                 console.log("THE FINAL VALUE: ", obj2.orgin);
                 return obj2.orgin;
