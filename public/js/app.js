@@ -2037,9 +2037,10 @@ __webpack_require__.r(__webpack_exports__);
       console.log('THE OTHER REPLACED VALUE: ', getUrl);
       getUrl = '{"' + getUrl + '"}';
       console.log("JSON FORMAT IS : ", getUrl);
-      console.log("THE FINAL VALUE : ", getUrl['origin']); // var obj = JSON.parse(getUrl);
+      console.log("THE FINAL VALUE : ", JSON.parse(JSON.stringify(getUrl.origin))); // var obj = JSON.parse(getUrl); JSON.parse(JSON.stringify(data.Nodes)); 
+      // this.jsonVal = JSON.parse(getUrl);
 
-      return getUrl['origin'];
+      return JSON.parse(JSON.stringify(getUrl.origin));
     },
     // companyName: function () {
     //     return url_info().incName.toUpperCase();
