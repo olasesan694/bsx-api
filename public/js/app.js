@@ -2013,10 +2013,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      info: null // info: {
-      //     origin: null
-      // }
-
+      // info: null
+      info: {
+        origin: null
+      }
     };
   },
   methods: {
@@ -2042,17 +2042,16 @@ __webpack_require__.r(__webpack_exports__);
       console.log("CUSTOM FORMAT IS : ", getUrl); // console.log("THE FINAL VALUE : ", json(getUrl));
       // var obj = JSON.parse(getUrl); JSON.parse(JSON.stringify(data.Nodes)); 
       // this.jsonVal = JSON.parse(getUrl);
-      // this.axios.post("https://localhost:3000/info/", this.info['origin'])
-      // .then((result) =>{
-      //     console.warn(result);
-      // })
-      // var obj = json(getUrl);
 
       this.info = getUrl;
-      var obj2 = JSON.parse(this.info);
-      console.log(" FINAL JSON FORMAT: ", obj2);
-      console.log("THE FINAL VALUE: ", obj2.orgin);
-      return obj2.orgin;
+      this.axios.post("https://connect.brisebox.com/info/", this.info).then(function (result) {
+        console.warn(result);
+      }); // var obj = json(getUrl);
+      // this.info = getUrl;
+      // var obj2 = JSON.parse(this.info);
+      // console.log(" FINAL JSON FORMAT: ", obj2);
+      // console.log("THE FINAL VALUE: ", obj2.orgin);
+      // return obj2.orgin;
     },
     // companyName: function () {
     //     return url_info().incName.toUpperCase();
