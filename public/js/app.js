@@ -2028,12 +2028,16 @@ __webpack_require__.r(__webpack_exports__);
     // },
     storeId: function storeId() {
       var customerURL = window.location.search.slice(1);
+      console.log('SLICED VALUE: ', customerURL);
       var getUrl = decodeURIComponent(customerURL);
+      console.log('DECODED URL: ', getUrl);
       getUrl = getUrl.replace(/=/g, '": "');
+      console.log('REPLACED VALUE: ', getUrl);
       getUrl = getUrl.replace(/&/g, '", "');
+      console.log('THE OTHER REPLACED VALUE: ', getUrl);
       getUrl = '{"' + getUrl + '"}';
-      console.log("THE JSON FORMAT IS : ", getUrl);
-      console.log("THE IS THE VALUE : ", getUrl['origin']); // var obj = JSON.parse(getUrl);
+      console.log("JSON FORMAT IS : ", getUrl);
+      console.log("THE FINAL VALUE : ", getUrl['origin']); // var obj = JSON.parse(getUrl);
 
       return getUrl['origin'];
     },
@@ -48281,7 +48285,7 @@ var render = function() {
     _c("div", { staticClass: "content" }, [
       _c("div", { staticClass: "company-brand" }, [
         _c("p", { attrs: { id: "uppercase-brand" } }, [
-          _vm._v(" " + _vm._s(_vm.storeId()) + " ")
+          _vm._v(" STORE ID: " + _vm._s(_vm.storeId()) + " ")
         ])
       ]),
       _vm._v(" "),

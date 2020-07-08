@@ -2,7 +2,7 @@
     <div id="app" class="container">
         <div class="content">
             <div class="company-brand">
-                <p id="uppercase-brand"> {{ storeId() }} </p>
+                <p id="uppercase-brand"> STORE ID: {{ storeId() }} </p>
             </div>
             <!-- <h4> Live Chat with Store Member <div id="lowercase-brand"> {{ companyName() }} </div> </h4> 
             <p><img id="image" v-bind:src="productImage"></p> 
@@ -36,13 +36,17 @@
             //     return obj;
             // },
             storeId: function () {
-                var customerURL =  window.location.search.slice(1);  
+                var customerURL =  window.location.search.slice(1);
+                console.log('SLICED VALUE: ', customerURL);  
                 var getUrl = decodeURIComponent(customerURL);
+                console.log('DECODED URL: ', getUrl);
                 getUrl = getUrl.replace(/=/g, '": "');
+                console.log('REPLACED VALUE: ', getUrl);
                 getUrl = getUrl.replace(/&/g, '", "');
+                console.log('THE OTHER REPLACED VALUE: ', getUrl);
                 getUrl = '{"'+getUrl+'"}';
-                console.log("THE JSON FORMAT IS : ", getUrl);
-                console.log("THE IS THE VALUE : ", getUrl['origin']);
+                console.log("JSON FORMAT IS : ", getUrl);
+                console.log("THE FINAL VALUE : ", getUrl['origin']);
                 // var obj = JSON.parse(getUrl);
                 return getUrl['origin'];
             },
