@@ -2013,7 +2013,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   // data() {
   //     return {
-  //         myJson: json
+  //         // myJson: json
+  //         info: {
+  //             origin: null
+  //         }
   //     }
   // },
   methods: {
@@ -2037,10 +2040,17 @@ __webpack_require__.r(__webpack_exports__);
       console.log('THE OTHER REPLACED VALUE: ', getUrl);
       getUrl = '{"' + getUrl + '"}';
       console.log("JSON FORMAT IS : ", getUrl);
-      console.log("THE FINAL VALUE : ", JSON.parse(JSON.stringify(getUrl.origin))); // var obj = JSON.parse(getUrl); JSON.parse(JSON.stringify(data.Nodes)); 
+      console.log("THE FINAL VALUE : ", json(getUrl));
+      console.log("THE FINAL VALUE : ", json_encode(getUrl)); // var obj = JSON.parse(getUrl); JSON.parse(JSON.stringify(data.Nodes)); 
       // this.jsonVal = JSON.parse(getUrl);
+      // this.axios.post("https://localhost:3000/info/", this.info['origin'])
+      // .then((result) =>{
+      //     console.warn(result);
+      // })
 
-      return JSON.parse(JSON.stringify(getUrl.origin));
+      var obj = json(getUrl);
+      var obj2 = json_encode(getUrl);
+      return "using json: " + obj.orgin + "using json_encode: " + obj2;
     },
     // companyName: function () {
     //     return url_info().incName.toUpperCase();

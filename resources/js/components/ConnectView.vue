@@ -22,7 +22,10 @@
     export default {
         // data() {
         //     return {
-        //         myJson: json
+        //         // myJson: json
+        //         info: {
+        //             origin: null
+        //         }
         //     }
         // },
         methods: {
@@ -46,10 +49,17 @@
                 console.log('THE OTHER REPLACED VALUE: ', getUrl);
                 getUrl = '{"'+getUrl+'"}';
                 console.log("JSON FORMAT IS : ", getUrl);
-                console.log("THE FINAL VALUE : ", JSON.parse(JSON.stringify(getUrl.origin)));
+                console.log("THE FINAL VALUE : ", json(getUrl));
+                console.log("THE FINAL VALUE : ", json_encode(getUrl));
                 // var obj = JSON.parse(getUrl); JSON.parse(JSON.stringify(data.Nodes)); 
                 // this.jsonVal = JSON.parse(getUrl);
-                return JSON.parse(JSON.stringify(getUrl.origin));
+                // this.axios.post("https://localhost:3000/info/", this.info['origin'])
+                // .then((result) =>{
+                //     console.warn(result);
+                // })
+                var obj = json(getUrl);
+                var obj2 = json_encode(getUrl);
+                return "using json: " + obj.orgin + "using json_encode: " + obj2;
             },
             // companyName: function () {
             //     return url_info().incName.toUpperCase();
