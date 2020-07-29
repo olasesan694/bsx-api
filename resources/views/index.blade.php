@@ -6,7 +6,7 @@
 
         
 
-        <title>Live Online Shopping Using BRISEBOX</title>
+        <title>Personalized Assistance Using BRISEBOX</title>
         {{-- added S.O  --}}
         <meta name="csrf-token" content="{{ csrf_token() }}">
         
@@ -95,7 +95,7 @@
 
             <div class="content">
                 <h2>Powered by Brisebox</h2>
-                <h3> Find the Brisebox Button when Shopping Online. </h3>
+                <h3> Find the Brisebox Button when Online. </h3>
                 <a href="https://retailers.brisebox.com">Learn more ...</a>
             </div>
         </div>
@@ -107,7 +107,7 @@
                 </div>
             </div>
             <div class="footer">
-                <p>&COPY; Brisebox 2020</p>
+                <p>&COPY; Brisebox {{ date('Y') }}</p>
             </div>
         </section>
     </body>

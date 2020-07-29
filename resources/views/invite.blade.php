@@ -21,7 +21,7 @@
                     document.getElementById("lowercase-email").innerHTML = supportEmail;
                 </script>
 
-                <h5> Invite and live chat with a <div id="lowercase-brand"></div> store member below. </h5>
+                <h5> Invite and get personalized <div id="lowercase-brand"></div> assistance below. </h5>
                 <script>
                     const companyname = extractCompanyName().toLowerCase();
                     document.getElementById("lowercase-brand").innerHTML = companyname;
