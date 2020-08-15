@@ -4,7 +4,7 @@
             <div class="company-brand">
                 <p id="uppercase-brand"> STORE ID: {{ storeId() }} </p>
             </div>
-            <!-- <h4> Live Chat with Store Member <div id="lowercase-brand"> {{ companyName() }} </div> </h4> 
+            <!-- <h4> Personalized assistance <div id="lowercase-brand"> {{ companyName() }} </div> </h4> 
             <p><img id="image" v-bind:src="productImage"></p> 
             <p id="title"> {{ productTitle() }} </p>
             <p id="price"> {{ productPrice() }} </p> -->
@@ -16,8 +16,6 @@
 </template>
 
 <script>
-
-    // import Lottie from './../../node_modules/lottie-web/build/player/lottie';
 
     export default {
         // data() {

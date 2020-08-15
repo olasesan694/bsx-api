@@ -2009,7 +2009,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-// import Lottie from './../../node_modules/lottie-web/build/player/lottie';
 /* harmony default export */ __webpack_exports__["default"] = ({
   // data() {
   //     return {

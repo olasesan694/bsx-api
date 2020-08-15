@@ -5,6 +5,8 @@
     {{-- <script src="{{ asset('js/begin.js') }}"></script>
     <script src="{{ asset('js/extractor.js') }}"></script> --}}
     
+    <script src="{{ asset('js/connect.js') }}"></script>
+
       <connect-view></connect-view>
 
 
